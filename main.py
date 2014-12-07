@@ -14,8 +14,13 @@ def handle_data():
         print(column_names)
 
         for row in sleep_reader:
-            row[0] = str(parse_date(row[0]))
-            row[1] = str(parse_date(row[1]))
+            # parse all time strings to datetimes / timedeltas
+            row[0] = parse_date(row[0])
+            row[1] = parse_date(row[1])
+            row[2] = parse_hm_time(row[2])
+            row[4] = parse_hm_time(row[4])
+            row[7] = parse_hm_time(row[7])
+            row[10] = parse_hm_time(row[10])
             print(row)
 
 
@@ -39,7 +44,15 @@ def parse_date(date):
 
     # create datetime object
     date_time = datetime.datetime(int(date[2]), months.index(date[0]), int(date[1][:-1]), hour, int(date[4][3:5]))
+
     return date_time
+
+
+def parse_hm_time(hm_string):
+    hm = hm_string.split()
+    if len(hm) == 1:
+        return datetime.timedelta(minutes=int(hm[0][:-1]))
+    return datetime.timedelta(hours=int(hm[0][:-1]), minutes=int(hm[1][:-1]))
 
 
 # quick and dirty unittest for myself
