@@ -2,36 +2,14 @@ __author__ = 'TPei'
 import csv
 import datetime
 from date_parser import *
+from csv_parser import *
 from plotter import *
+import json
+from pprint import pprint
 
 
-def handle_data():
-    """
-    parse data in csv file
-    :return: list with parsed data
-    """
-    column_names = ['start_date', 'end_date', 'total_sleep_time', 'total_sleep_val', 'light_sleep_time',
-                    'light_sleep_val', 'light_sleep_percent', 'sound_sleep_time', 'sound_sleep_val',
-                    'sound_sleep_percent', 'wake_time', 'wake_val', 'wake_percent', 'graphic']
-
-    # parse csv
-    with open('res/sleep.csv', newline='') as csvfile:
-        sleep_reader = csv.reader(csvfile, delimiter=',', quotechar='"')
-        #print(column_names)
-        sleep_data = []
-        for row in sleep_reader:
-            # parse all time strings to datetimes / timedeltas
-            row[0] = parse_date(row[0])
-            row[1] = parse_date(row[1])
-            row[2] = parse_hm_time(row[2])
-            row[4] = parse_hm_time(row[4])
-            row[7] = parse_hm_time(row[7])
-            row[10] = parse_hm_time(row[10])
-            sleep_data.append(row)
-    return sleep_data
-
-if __name__ == '__main__':
-    sleep_data = handle_data()
+def plot_from_csv():
+    sleep_data = parse_csv()
     total_times = []
     deep_times = []
     light_times = []
@@ -49,3 +27,31 @@ if __name__ == '__main__':
 
     #plot_bar_chart(total_times, deep_times, light_times, awake_times, labels)
     plot_line_graph(total_times, deep_times, light_times, awake_times, labels)
+
+
+def plot_from_json():
+    json_data = open('res/sleep.json')
+    data = json.load(json_data)
+    items = data['data']['items']
+
+    total_times = []
+    deep_times = []
+    light_times = []
+    awake_times = []
+    labels = []
+
+    for item in items:
+        labels.append(item['time_completed'])
+        item = item['details']
+        total_times.append(item['duration'])
+        deep_times.append(item['sound'])
+        light_times.append(item['light'])
+        awake_times.append(item['awake'])
+
+    plot_line_graph(total_times, deep_times, light_times, awake_times)
+    #plot_bar_chart(total_times, deep_times, light_times, awake_times, labels)
+    json_data.close()
+
+if __name__ == '__main__':
+    #plot_from_csv()
+    plot_from_json()
