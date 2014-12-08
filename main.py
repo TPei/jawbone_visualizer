@@ -59,7 +59,8 @@ def plot_from_json():
 
 
     # json data is from now -> past, dirty array reverse here
-    plot_line_graph(time_in_bed[::-1], total_sleep[::-1], deep_times[::-1], light_times[::-1], awake_times[::-1])
+    #plot_line_graph(time_in_bed[::-1], total_sleep[::-1], deep_times[::-1], light_times[::-1], awake_times[::-1])
+    composite_line_bar(time_in_bed[::-1], total_sleep[::-1], deep_times[::-1], light_times[::-1], awake_times[::-1])
     #plot_bar_chart(total_sleep, deep_times, light_times, awake_times, labels)
     json_data.close()
 
