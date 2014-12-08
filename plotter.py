@@ -70,10 +70,10 @@ def plot_line_graph(time_in_bed, total_sleep, deep_sleep, light_sleep, no_sleep,
     :return:
     """
     ax = plt.subplot(111)
+    line_total, = plt.plot(total_sleep, label='Total Sleep', linewidth=6.0)
     line_in_bed, = plt.plot(time_in_bed, label='Time in Bed')
-    line_total, = plt.plot(total_sleep, label='Total Sleep')
-    line_deep, = plt.plot(deep_sleep, label='Deep Sleep', linestyle='--')
-    line_light, = plt.plot(light_sleep, label='Light Sleep', linestyle='-.')
+    line_deep, = plt.plot(deep_sleep, label='Deep Sleep', linestyle='--', linewidth=4.0)
+    line_light, = plt.plot(light_sleep, label='Light Sleep', linestyle='-.', linewidth=4.0)
     line_awake, = plt.plot(no_sleep, label='Awake')
     #plt.legend(handles=[line_in_bed, line_total, line_deep, line_light, line_awake])
     plt.legend(bbox_to_anchor=(0., 1.02, 1., .102), loc=1,
