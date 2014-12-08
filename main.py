@@ -30,7 +30,7 @@ def plot_from_csv():
         labels.append(str(row[1].month) + "/" + str(row[1].day))
 
     #plot_bar_chart(total_times, deep_times, light_times, awake_times, labels)
-    plot_line_graph(total_times, deep_times, light_times, awake_times, labels)
+    plot_line_graph(total_times, total_times, deep_times, light_times, awake_times, labels)
 
 
 def plot_from_json():
@@ -38,7 +38,8 @@ def plot_from_json():
     data = json.load(json_data)
     items = data['data']['items']
 
-    total_times = []
+    time_in_bed = []
+    total_sleep = []
     deep_times = []
     light_times = []
     awake_times = []
@@ -47,13 +48,17 @@ def plot_from_json():
     for item in items:
         labels.append(item['time_completed'])
         item = item['details']
-        total_times.append(to_hours(item['duration']))
-        deep_times.append(to_hours(item['sound']))
-        light_times.append(to_hours(item['light']))
+        time_in_bed.append(to_hours(item['duration']))
+
+        sound = to_hours(item['sound'])
+        light = to_hours(item['light'])
+        total_sleep.append(sound + light)
+        deep_times.append(sound)
+        light_times.append(light)
         awake_times.append(to_hours(item['awake']))
 
-    plot_line_graph(total_times, deep_times, light_times, awake_times)
-    plot_bar_chart(total_times, deep_times, light_times, awake_times, labels)
+    plot_line_graph(time_in_bed, total_sleep, deep_times, light_times, awake_times)
+    #plot_bar_chart(total_sleep, deep_times, light_times, awake_times, labels)
     json_data.close()
 
 if __name__ == '__main__':
