@@ -42,8 +42,8 @@ def plot_bar_chart(total_sleep, deep_sleep, light_sleep, no_sleep, labels=[]):
         # axes and labels
         ax.set_xlim(-width, len(ind)+width)
         ax.set_ylim(0, max(total_sleep) + max(total_sleep) / 10)
-        ax.set_ylabel('total sleep in seconds per night')
-        ax.set_title('Sleep Duration per day')
+        ax.set_ylabel('total sleep in hours per night')
+        ax.set_title('Sleep Duration per night')
         xTickMarks = labels
         ax.set_xticks(ind+(width/2))
         xtickNames = ax.set_xticklabels(xTickMarks)
@@ -77,5 +77,9 @@ def plot_line_graph(total_sleep, deep_sleep, light_sleep, no_sleep, labels=[]):
     #plt.legend(handles=[line_total, line_deep, line_light, line_awake])
     plt.legend(bbox_to_anchor=(0., 1.02, 1., .102), loc=1,
            ncol=2, mode="expand", borderaxespad=0.)
+    plt.ylabel('Sleep Duration in Hours')
+
+    # set ylim to max total_sleep + 10%
+    plt.ylim(0, max(total_sleep) + (max(total_sleep) / 10))
     plt.show()
     print("daym")

@@ -8,6 +8,10 @@ import json
 from pprint import pprint
 
 
+def to_hours(seconds):
+    return seconds / 60 / 60
+
+
 def plot_from_csv():
     sleep_data = parse_csv()
     total_times = []
@@ -17,10 +21,10 @@ def plot_from_csv():
     labels = []
     for row in sleep_data:
         # currently I am converting to number of seconds for plotting
-        total_times.append((row[1] - row[0]).total_seconds())
-        deep_times.append((row[4]).total_seconds())
-        light_times.append((row[7]).total_seconds())
-        awake_times.append((row[10]).total_seconds())
+        total_times.append(to_hours((row[1] - row[0]).total_seconds()))
+        deep_times.append(to_hours((row[4]).total_seconds()))
+        light_times.append(to_hours((row[7]).total_seconds()))
+        awake_times.append(to_hours((row[10]).total_seconds()))
 
         # label is month/day
         labels.append(str(row[1].month) + "/" + str(row[1].day))
@@ -43,13 +47,13 @@ def plot_from_json():
     for item in items:
         labels.append(item['time_completed'])
         item = item['details']
-        total_times.append(item['duration'])
-        deep_times.append(item['sound'])
-        light_times.append(item['light'])
-        awake_times.append(item['awake'])
+        total_times.append(to_hours(item['duration']))
+        deep_times.append(to_hours(item['sound']))
+        light_times.append(to_hours(item['light']))
+        awake_times.append(to_hours(item['awake']))
 
     plot_line_graph(total_times, deep_times, light_times, awake_times)
-    #plot_bar_chart(total_times, deep_times, light_times, awake_times, labels)
+    plot_bar_chart(total_times, deep_times, light_times, awake_times, labels)
     json_data.close()
 
 if __name__ == '__main__':
