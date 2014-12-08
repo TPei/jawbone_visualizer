@@ -4,7 +4,12 @@ import datetime
 from date_parser import *
 from plotter import *
 
+
 def handle_data():
+    """
+    parse data in csv file
+    :return: list with parsed data
+    """
     column_names = ['start_date', 'end_date', 'total_sleep_time', 'total_sleep_val', 'light_sleep_time',
                     'light_sleep_val', 'light_sleep_percent', 'sound_sleep_time', 'sound_sleep_val',
                     'sound_sleep_percent', 'wake_time', 'wake_val', 'wake_percent', 'graphic']
@@ -25,18 +30,6 @@ def handle_data():
             sleep_data.append(row)
     return sleep_data
 
-
-# quick and dirty unittest for myself
-def test_parse_date():
-    date = 'December 06, 2014 at 12:17AM'
-    assert parse_date(date) == datetime.datetime(2014, 12, 6, 00, 17)
-
-    date = 'December 06, 2014 at 12:17PM'
-    assert parse_date(date) == datetime.datetime(2014, 12, 6, 12, 17)
-
-    date = 'December 06, 2014 at 01:17PM'
-    assert parse_date(date) == datetime.datetime(2014, 12, 6, 13, 17)
-
 if __name__ == '__main__':
     sleep_data = handle_data()
     total_times = []
@@ -51,8 +44,8 @@ if __name__ == '__main__':
         light_times.append((row[7]).total_seconds())
         awake_times.append((row[10]).total_seconds())
 
-
         # label is month/day
         labels.append(str(row[1].month) + "/" + str(row[1].day))
 
-    plot_bar_chart(total_times, deep_times, light_times, awake_times, labels)
+    #plot_bar_chart(total_times, deep_times, light_times, awake_times, labels)
+    plot_line_graph(total_times, deep_times, light_times, awake_times, labels)
