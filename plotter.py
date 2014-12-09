@@ -95,10 +95,13 @@ def composite_line_bar(time_in_bed, total_sleep, deep_sleep, light_sleep, no_sle
     #plt.legend(handles=[line_in_bed, line_total, line_deep, line_light, line_awake])
     plt.legend(bbox_to_anchor=(0., 1.02, 1., .102), loc=1,
            ncol=2, mode="expand", borderaxespad=0.)
+
     plt.ylabel('Sleep Duration in Hours')
+    plt.xlabel('Nights (beginning 2014/12/04-05)')
 
     # set ylim to max total_sleep + 10%
     plt.ylim(0, max(time_in_bed) + (max(time_in_bed) / 8))
+    plt.xticks(np.arange(0, len(time_in_bed), 1.0))
     #plt.show()
 
 
@@ -145,14 +148,14 @@ def composite_line_bar(time_in_bed, total_sleep, deep_sleep, light_sleep, no_sle
         # add value label at the top of the stacked bars
         for rect in bars:
             height = rect.get_height()
-            ax.text(rect.get_x()+rect.get_width()/2., offset+height, '%d' % height,
+            ax.text(rect.get_x()+rect.get_width()/2., offset+height, '%.2f' % height,
                     ha='center', va='bottom')
 
         # axes and labels
         ax.set_xlim(-width, len(ind)+width)
         ax.set_ylim(0, max(total_sleep) + max(total_sleep) / 10)
         ax.set_ylabel('total sleep in hours per night')
-        ax.set_title('Sleep Duration per night')
+        ax.set_title('Average times for sleep cycles')
         xTickMarks = ['in bed', 'asleep', 'deep sleep', 'light sleep', 'awake']
         ax.set_xticks(ind+(width/2))
         xtickNames = ax.set_xticklabels(xTickMarks)

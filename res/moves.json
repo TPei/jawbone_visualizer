@@ -1,0 +1,884 @@
+{
+  "meta":  {
+    "user_xid": "0XKM3EPKpEIzrtFNh6_jxg",
+    "message": "OK",
+    "code": 200,
+    "time": 1418110629
+  },
+  "data":  {
+    "items":  [
+       {
+        "time_completed": 1418110260,
+        "xid": "M33nrWg21jteHzzfGWB0rhcPCY--dNxd",
+        "title": "269 steps today",
+        "type": "move",
+        "time_created": 1418103840,
+        "time_updated": 1418110629,
+        "details":  {
+          "active_time": 137,
+          "tzs":  [
+             [
+              1418103840,
+              "Europe/Berlin"
+            ]
+          ],
+          "bmr_day": 1797.73817752,
+          "wo_count": 0,
+          "wo_longest": 0,
+          "bmr": 643.801572051,
+          "bg_calories": 12.4014157057,
+          "hourly_totals":  {
+            "2014120906":  {
+              "distance": 16,
+              "active_time": 10,
+              "calories": 0.797960042953,
+              "inactive_time": 0,
+              "longest_idle_time": 0,
+              "steps": 19,
+              "longest_active_time": 10
+            },
+            "2014120908":  {
+              "distance": 211,
+              "active_time": 127,
+              "calories": 11.6034556627,
+              "inactive_time": 0,
+              "longest_idle_time": 0,
+              "steps": 250,
+              "longest_active_time": 127
+            }
+          },
+          "wo_time": 0,
+          "wo_active_time": 0,
+          "sunrise": 1418110380,
+          "distance": 227,
+          "tz": "Europe/Berlin",
+          "longest_active": 127,
+          "longest_idle": 0,
+          "calories": 15.2565231135,
+          "km": 0.227,
+          "steps": 269,
+          "wo_calories": 0,
+          "inactive_time": 0,
+          "sunset": 1418136960
+        },
+        "date": 20141209,
+        "snapshot_image": "/nudge/image/e/1418110330/M33nrWg21jteHzzfGWB0rhcPCY--dNxd/L6F6Mlp2dtg.png"
+      },
+       {
+        "time_updated": 1418110629,
+        "xid": "EdU6mUygJ6UOXdpqJ1h4LZkEBImprHlL",
+        "title": "13,832 steps",
+        "snapshot_image": "/nudge/image/e/1418076488/EdU6mUygJ6UOXdpqJ1h4LZkEBImprHlL/L6F6Mlp2dtg.png",
+        "time_created": 1417993320,
+        "time_completed": 1418076480,
+        "details":  {
+          "active_time": 7337,
+          "tzs":  [
+             [
+              1417993320,
+              "Europe/Berlin"
+            ]
+          ],
+          "bmr_day": 1647.70567238,
+          "wo_count": 0,
+          "wo_longest": 0,
+          "bmr": 1647.70567238,
+          "bg_calories": 594.587695803,
+          "hourly_totals":  {
+            "2014120800":  {
+              "distance": 19,
+              "active_time": 9,
+              "calories": 1.28673565388,
+              "inactive_time": 0,
+              "longest_idle_time": 0,
+              "steps": 21,
+              "longest_active_time": 9
+            },
+            "2014120805":  {
+              "distance": 17,
+              "active_time": 9,
+              "calories": 1.03953063488,
+              "inactive_time": 0,
+              "longest_idle_time": 0,
+              "steps": 20,
+              "longest_active_time": 9
+            },
+            "2014120806":  {
+              "distance": 19,
+              "active_time": 11,
+              "calories": 1.05079960823,
+              "inactive_time": 0,
+              "longest_idle_time": 0,
+              "steps": 22,
+              "longest_active_time": 11
+            },
+            "2014120808":  {
+              "distance": 364,
+              "active_time": 212,
+              "calories": 20.3550850749,
+              "inactive_time": 0,
+              "longest_idle_time": 0,
+              "steps": 425,
+              "longest_active_time": 146
+            },
+            "2014120809":  {
+              "distance": 116,
+              "active_time": 67,
+              "calories": 6.4740742445,
+              "inactive_time": 2100,
+              "longest_idle_time": 1860,
+              "steps": 136,
+              "longest_active_time": 52
+            },
+            "2014120811":  {
+              "distance": 424,
+              "active_time": 247,
+              "calories": 19.0548988581,
+              "inactive_time": 3060,
+              "longest_idle_time": 1200,
+              "steps": 493,
+              "longest_active_time": 133
+            },
+            "2014120812":  {
+              "distance": 1205,
+              "active_time": 734,
+              "calories": 65.6729441136,
+              "inactive_time": 1440,
+              "longest_idle_time": 660,
+              "steps": 1424,
+              "longest_active_time": 601
+            },
+            "2014120813":  {
+              "distance": 538,
+              "active_time": 348,
+              "calories": 25.9657889009,
+              "inactive_time": 2340,
+              "longest_idle_time": 600,
+              "steps": 654,
+              "longest_active_time": 243
+            },
+            "2014120814":  {
+              "distance": 375,
+              "active_time": 238,
+              "calories": 19.6304973364,
+              "inactive_time": 1320,
+              "longest_idle_time": 1080,
+              "steps": 450,
+              "longest_active_time": 134
+            },
+            "2014120815":  {
+              "distance": 2076,
+              "active_time": 1371,
+              "calories": 108.324042559,
+              "inactive_time": 1020,
+              "longest_idle_time": 1020,
+              "steps": 2525,
+              "longest_active_time": 1349
+            },
+            "2014120816":  {
+              "distance": 199,
+              "active_time": 120,
+              "calories": 10.7365676165,
+              "inactive_time": 3120,
+              "longest_idle_time": 2040,
+              "steps": 235,
+              "longest_active_time": 60
+            },
+            "2014120817":  {
+              "distance": 1939,
+              "active_time": 1299,
+              "calories": 97.9307626486,
+              "inactive_time": 1140,
+              "longest_idle_time": 480,
+              "steps": 2398,
+              "longest_active_time": 1180
+            },
+            "2014120818":  {
+              "distance": 581,
+              "active_time": 400,
+              "calories": 29.3946348727,
+              "inactive_time": 780,
+              "longest_idle_time": 480,
+              "steps": 723,
+              "longest_active_time": 296
+            },
+            "2014120819":  {
+              "distance": 2438,
+              "active_time": 1583,
+              "calories": 121.01283614,
+              "inactive_time": 300,
+              "longest_idle_time": 300,
+              "steps": 2946,
+              "longest_active_time": 1243
+            },
+            "2014120820":  {
+              "distance": 562,
+              "active_time": 330,
+              "calories": 31.4494074583,
+              "inactive_time": 0,
+              "longest_idle_time": 0,
+              "steps": 650,
+              "longest_active_time": 330
+            },
+            "2014120821":  {
+              "distance": 435,
+              "active_time": 261,
+              "calories": 24.6421859264,
+              "inactive_time": 0,
+              "longest_idle_time": 0,
+              "steps": 507,
+              "longest_active_time": 219
+            },
+            "2014120822":  {
+              "distance": 146,
+              "active_time": 81,
+              "calories": 8.49347737432,
+              "inactive_time": 0,
+              "longest_idle_time": 0,
+              "steps": 166,
+              "longest_active_time": 50
+            },
+            "2014120823":  {
+              "distance": 33,
+              "active_time": 17,
+              "calories": 2.07342678308,
+              "inactive_time": 0,
+              "longest_idle_time": 0,
+              "steps": 37,
+              "longest_active_time": 17
+            }
+          },
+          "wo_time": 0,
+          "wo_active_time": 0,
+          "sunrise": 1418023920,
+          "distance": 11486,
+          "tz": "Europe/Berlin",
+          "longest_active": 1573,
+          "longest_idle": 5640,
+          "calories": 747.493815205,
+          "km": 11.486,
+          "steps": 13832,
+          "wo_calories": 0,
+          "inactive_time": 24360,
+          "sunset": 1418050560
+        },
+        "date": 20141208,
+        "type": "move"
+      },
+       {
+        "time_updated": 1418110629,
+        "xid": "EdU6mUygJ6Xdzypc6H1nmebpGNPoMOpz",
+        "title": "8,736 steps",
+        "snapshot_image": "/nudge/image/e/1417992463/EdU6mUygJ6Xdzypc6H1nmebpGNPoMOpz/L6F6Mlp2dtg.png",
+        "time_created": 1417918980,
+        "time_completed": 1417992420,
+        "details":  {
+          "active_time": 4455,
+          "tzs":  [
+             [
+              1417918980,
+              "Europe/Berlin"
+            ]
+          ],
+          "inactive_time": 28680,
+          "wo_count": 0,
+          "wo_longest": 0,
+          "bmr": 1707.78529886,
+          "bg_calories": 403.061699055,
+          "hourly_totals":  {
+            "2014120703":  {
+              "distance": 15,
+              "active_time": 8,
+              "calories": 0.910293579102,
+              "inactive_time": 0,
+              "longest_idle_time": 0,
+              "steps": 18,
+              "longest_active_time": 8
+            },
+            "2014120708":  {
+              "distance": 41,
+              "active_time": 26,
+              "calories": 1.85070616007,
+              "inactive_time": 0,
+              "longest_idle_time": 0,
+              "steps": 50,
+              "longest_active_time": 13
+            },
+            "2014120710":  {
+              "distance": 325,
+              "active_time": 213,
+              "calories": 16.8064508438,
+              "inactive_time": 540,
+              "longest_idle_time": 540,
+              "steps": 398,
+              "longest_active_time": 213
+            },
+            "2014120711":  {
+              "distance": 1230,
+              "active_time": 727,
+              "calories": 68.2846392393,
+              "inactive_time": 1020,
+              "longest_idle_time": 780,
+              "steps": 1445,
+              "longest_active_time": 695
+            },
+            "2014120712":  {
+              "distance": 294,
+              "active_time": 171,
+              "calories": 14.1770556569,
+              "inactive_time": 2940,
+              "longest_idle_time": 1440,
+              "steps": 342,
+              "longest_active_time": 117
+            },
+            "2014120713":  {
+              "distance": 449,
+              "active_time": 273,
+              "calories": 24.1554378867,
+              "inactive_time": 2580,
+              "longest_idle_time": 1440,
+              "steps": 531,
+              "longest_active_time": 258
+            },
+            "2014120714":  {
+              "distance": 575,
+              "active_time": 353,
+              "calories": 29.8766193688,
+              "inactive_time": 1680,
+              "longest_idle_time": 540,
+              "steps": 686,
+              "longest_active_time": 264
+            },
+            "2014120715":  {
+              "distance": 1851,
+              "active_time": 1203,
+              "calories": 92.8843461685,
+              "inactive_time": 660,
+              "longest_idle_time": 360,
+              "steps": 2258,
+              "longest_active_time": 1147
+            },
+            "2014120716":  {
+              "distance": 18,
+              "active_time": 11,
+              "calories": 0.927197039127,
+              "inactive_time": 3300,
+              "longest_idle_time": 3300,
+              "steps": 21,
+              "longest_active_time": 11
+            },
+            "2014120717":  {
+              "distance": 562,
+              "active_time": 255,
+              "calories": 36.9270561934,
+              "inactive_time": 0,
+              "longest_idle_time": 0,
+              "steps": 561,
+              "longest_active_time": 255
+            },
+            "2014120718":  {
+              "distance": 756,
+              "active_time": 452,
+              "calories": 39.7080939822,
+              "inactive_time": 840,
+              "longest_idle_time": 480,
+              "steps": 885,
+              "longest_active_time": 168
+            },
+            "2014120719":  {
+              "distance": 78,
+              "active_time": 43,
+              "calories": 4.56837153435,
+              "inactive_time": 1920,
+              "longest_idle_time": 1320,
+              "steps": 87,
+              "longest_active_time": 30
+            },
+            "2014120720":  {
+              "distance": 202,
+              "active_time": 116,
+              "calories": 11.1074509025,
+              "inactive_time": 0,
+              "longest_idle_time": 0,
+              "steps": 227,
+              "longest_active_time": 62
+            },
+            "2014120721":  {
+              "distance": 810,
+              "active_time": 455,
+              "calories": 46.5807023048,
+              "inactive_time": 0,
+              "longest_idle_time": 0,
+              "steps": 933,
+              "longest_active_time": 384
+            },
+            "2014120722":  {
+              "distance": 194,
+              "active_time": 112,
+              "calories": 11.3331638277,
+              "inactive_time": 0,
+              "longest_idle_time": 0,
+              "steps": 226,
+              "longest_active_time": 102
+            },
+            "2014120723":  {
+              "distance": 56,
+              "active_time": 37,
+              "calories": 2.96411436796,
+              "inactive_time": 0,
+              "longest_idle_time": 0,
+              "steps": 68,
+              "longest_active_time": 37
+            }
+          },
+          "bmr_day": 1707.78529886,
+          "wo_active_time": 0,
+          "distance": 7456,
+          "tz": "Europe/Berlin",
+          "longest_active": 1147,
+          "longest_idle": 4260,
+          "calories": 495.906698828,
+          "km": 7.456,
+          "steps": 8736,
+          "wo_calories": 0,
+          "wo_time": 0
+        },
+        "date": 20141207,
+        "type": "move"
+      },
+       {
+        "time_completed": 1417904340,
+        "xid": "EdU6mUygJ6UrKc04h95HCSaCtrn4DxBS",
+        "title": "20,942 steps",
+        "snapshot_image": "/nudge/image/e/1417904371/EdU6mUygJ6UrKc04h95HCSaCtrn4DxBS/L6F6Mlp2dtg.png",
+        "time_created": 1417820400,
+        "time_updated": 1418110629,
+        "details":  {
+          "active_time": 10990,
+          "tzs":  [
+             [
+              1417820400,
+              "Europe/Berlin"
+            ]
+          ],
+          "inactive_time": 27420,
+          "wo_count": 0,
+          "wo_longest": 0,
+          "bmr": 1571.60794469,
+          "bg_calories": 950.278328951,
+          "hourly_totals":  {
+            "2014120600":  {
+              "distance": 2194,
+              "active_time": 1152,
+              "calories": 135.649843395,
+              "inactive_time": 0,
+              "longest_idle_time": 0,
+              "steps": 2413,
+              "longest_active_time": 871
+            },
+            "2014120601":  {
+              "distance": 1815,
+              "active_time": 1081,
+              "calories": 95.5672665238,
+              "inactive_time": 0,
+              "longest_idle_time": 0,
+              "steps": 2141,
+              "longest_active_time": 1081
+            },
+            "2014120602":  {
+              "distance": 2545,
+              "active_time": 1429,
+              "calories": 143.758692786,
+              "inactive_time": 0,
+              "longest_idle_time": 0,
+              "steps": 2903,
+              "longest_active_time": 1056
+            },
+            "2014120603":  {
+              "distance": 3191,
+              "active_time": 1987,
+              "calories": 172.003568649,
+              "inactive_time": 0,
+              "longest_idle_time": 0,
+              "steps": 3763,
+              "longest_active_time": 1987
+            },
+            "2014120604":  {
+              "distance": 156,
+              "active_time": 87,
+              "calories": 8.88299500942,
+              "inactive_time": 0,
+              "longest_idle_time": 0,
+              "steps": 177,
+              "longest_active_time": 87
+            },
+            "2014120611":  {
+              "distance": 662,
+              "active_time": 396,
+              "calories": 35.5483881235,
+              "inactive_time": 1980,
+              "longest_idle_time": 600,
+              "steps": 775,
+              "longest_active_time": 160
+            },
+            "2014120612":  {
+              "distance": 60,
+              "active_time": 44,
+              "calories": 2.98774349689,
+              "inactive_time": 2280,
+              "longest_idle_time": 2280,
+              "steps": 77,
+              "longest_active_time": 44
+            },
+            "2014120613":  {
+              "distance": 2144,
+              "active_time": 1458,
+              "calories": 107.375982285,
+              "inactive_time": 240,
+              "longest_idle_time": 240,
+              "steps": 2663,
+              "longest_active_time": 1369
+            },
+            "2014120614":  {
+              "distance": 1141,
+              "active_time": 864,
+              "calories": 59.1085255146,
+              "inactive_time": 1800,
+              "longest_idle_time": 1080,
+              "steps": 1483,
+              "longest_active_time": 776
+            },
+            "2014120615":  {
+              "distance": 1723,
+              "active_time": 1264,
+              "calories": 86.8341954798,
+              "inactive_time": 960,
+              "longest_idle_time": 720,
+              "steps": 2200,
+              "longest_active_time": 944
+            },
+            "2014120616":  {
+              "distance": 1057,
+              "active_time": 699,
+              "calories": 53.8991195224,
+              "inactive_time": 1380,
+              "longest_idle_time": 840,
+              "steps": 1302,
+              "longest_active_time": 463
+            },
+            "2014120617":  {
+              "distance": 468,
+              "active_time": 293,
+              "calories": 24.4734235406,
+              "inactive_time": 300,
+              "longest_idle_time": 300,
+              "steps": 558,
+              "longest_active_time": 283
+            },
+            "2014120618":  {
+              "distance": 59,
+              "active_time": 31,
+              "calories": 3.63554000854,
+              "inactive_time": 1920,
+              "longest_idle_time": 1380,
+              "steps": 67,
+              "longest_active_time": 18
+            },
+            "2014120619":  {
+              "distance": 28,
+              "active_time": 14,
+              "calories": 1.80931818485,
+              "inactive_time": 1140,
+              "longest_idle_time": 1140,
+              "steps": 31,
+              "longest_active_time": 14
+            },
+            "2014120620":  {
+              "distance": 24,
+              "active_time": 17,
+              "calories": 1.18259298801,
+              "inactive_time": 0,
+              "longest_idle_time": 0,
+              "steps": 30,
+              "longest_active_time": 17
+            },
+            "2014120623":  {
+              "distance": 308,
+              "active_time": 174,
+              "calories": 17.5611334443,
+              "inactive_time": 0,
+              "longest_idle_time": 0,
+              "steps": 359,
+              "longest_active_time": 174
+            }
+          },
+          "bmr_day": 1571.60794469,
+          "wo_active_time": 0,
+          "sunrise": 1417850940,
+          "distance": 17575,
+          "tz": "Europe/Berlin",
+          "longest_active": 3130,
+          "longest_idle": 7800,
+          "calories": 1179.31918974,
+          "km": 17.575,
+          "steps": 20942,
+          "wo_calories": 0,
+          "wo_time": 0,
+          "sunset": 1417791480
+        },
+        "date": 20141206,
+        "type": "move"
+      },
+       {
+        "time_updated": 1418110629,
+        "xid": "EdU6mUygJ6VdjzKT30dbj5j1kkoal8Vg",
+        "title": "16,335 steps",
+        "snapshot_image": "/nudge/image/e/1417820754/EdU6mUygJ6VdjzKT30dbj5j1kkoal8Vg/L6F6Mlp2dtg.png",
+        "time_created": 1417754700,
+        "time_completed": 1417820340,
+        "details":  {
+          "active_time": 8551,
+          "tzs":  [
+             [
+              1417754700,
+              "Europe/Berlin"
+            ]
+          ],
+          "bmr_day": 1622.45543516,
+          "wo_count": 0,
+          "wo_longest": 0,
+          "bmr": 1622.45543516,
+          "bg_calories": 730.806373935,
+          "hourly_totals":  {
+            "2014120505":  {
+              "distance": 20,
+              "active_time": 11,
+              "calories": 1.18188238144,
+              "inactive_time": 0,
+              "longest_idle_time": 0,
+              "steps": 23,
+              "longest_active_time": 11
+            },
+            "2014120506":  {
+              "distance": 658,
+              "active_time": 387,
+              "calories": 36.5205466747,
+              "inactive_time": 0,
+              "longest_idle_time": 0,
+              "steps": 770,
+              "longest_active_time": 183
+            },
+            "2014120507":  {
+              "distance": 152,
+              "active_time": 99,
+              "calories": 7.55631452799,
+              "inactive_time": 0,
+              "longest_idle_time": 0,
+              "steps": 184,
+              "longest_active_time": 50
+            },
+            "2014120508":  {
+              "distance": 1868,
+              "active_time": 1179,
+              "calories": 100.410803795,
+              "inactive_time": 0,
+              "longest_idle_time": 0,
+              "steps": 2230,
+              "longest_active_time": 1179
+            },
+            "2014120509":  {
+              "distance": 756,
+              "active_time": 474,
+              "calories": 35.9527075291,
+              "inactive_time": 3000,
+              "longest_idle_time": 3000,
+              "steps": 903,
+              "longest_active_time": 474
+            },
+            "2014120510":  {
+              "distance": 1245,
+              "active_time": 820,
+              "calories": 64.5548945069,
+              "inactive_time": 2100,
+              "longest_idle_time": 1320,
+              "steps": 1516,
+              "longest_active_time": 765
+            },
+            "2014120512":  {
+              "distance": 342,
+              "active_time": 215,
+              "calories": 18.0598400831,
+              "inactive_time": 2700,
+              "longest_idle_time": 1500,
+              "steps": 410,
+              "longest_active_time": 97
+            },
+            "2014120513":  {
+              "distance": 136,
+              "active_time": 91,
+              "calories": 3.68625020981,
+              "inactive_time": 3240,
+              "longest_idle_time": 3240,
+              "steps": 170,
+              "longest_active_time": 79
+            },
+            "2014120514":  {
+              "distance": 570,
+              "active_time": 362,
+              "calories": 31.6422986984,
+              "inactive_time": 2400,
+              "longest_idle_time": 1500,
+              "steps": 678,
+              "longest_active_time": 198
+            },
+            "2014120515":  {
+              "distance": 657,
+              "active_time": 365,
+              "calories": 39.9104906917,
+              "inactive_time": 2160,
+              "longest_idle_time": 780,
+              "steps": 726,
+              "longest_active_time": 291
+            },
+            "2014120516":  {
+              "distance": 618,
+              "active_time": 407,
+              "calories": 31.5434536934,
+              "inactive_time": 2520,
+              "longest_idle_time": 1200,
+              "steps": 756,
+              "longest_active_time": 363
+            },
+            "2014120517":  {
+              "distance": 1868,
+              "active_time": 1242,
+              "calories": 93.0327552259,
+              "inactive_time": 660,
+              "longest_idle_time": 360,
+              "steps": 2279,
+              "longest_active_time": 644
+            },
+            "2014120518":  {
+              "distance": 1057,
+              "active_time": 650,
+              "calories": 57.380009681,
+              "inactive_time": 1740,
+              "longest_idle_time": 1080,
+              "steps": 1260,
+              "longest_active_time": 437
+            },
+            "2014120519":  {
+              "distance": 442,
+              "active_time": 239,
+              "calories": 26.4109698534,
+              "inactive_time": 1980,
+              "longest_idle_time": 1260,
+              "steps": 492,
+              "longest_active_time": 85
+            },
+            "2014120520":  {
+              "distance": 1660,
+              "active_time": 902,
+              "calories": 97.9373068511,
+              "inactive_time": 0,
+              "longest_idle_time": 0,
+              "steps": 1882,
+              "longest_active_time": 902
+            },
+            "2014120521":  {
+              "distance": 226,
+              "active_time": 146,
+              "calories": 12.3755860329,
+              "inactive_time": 0,
+              "longest_idle_time": 0,
+              "steps": 273,
+              "longest_active_time": 42
+            },
+            "2014120522":  {
+              "distance": 1007,
+              "active_time": 682,
+              "calories": 50.0213792622,
+              "inactive_time": 0,
+              "longest_idle_time": 0,
+              "steps": 1243,
+              "longest_active_time": 518
+            },
+            "2014120523":  {
+              "distance": 460,
+              "active_time": 280,
+              "calories": 22.6288842373,
+              "inactive_time": 0,
+              "longest_idle_time": 0,
+              "steps": 540,
+              "longest_active_time": 160
+            }
+          },
+          "wo_time": 0,
+          "wo_active_time": 0,
+          "sunrise": 1417764420,
+          "distance": 13742,
+          "tz": "Europe/Berlin",
+          "longest_active": 1179,
+          "longest_idle": 3840,
+          "calories": 909.018251108,
+          "km": 13.742,
+          "steps": 16335,
+          "wo_calories": 0,
+          "inactive_time": 27960,
+          "sunset": 1417791480
+        },
+        "date": 20141205,
+        "type": "move"
+      },
+       {
+        "time_completed": 1417728720,
+        "xid": "EdU6mUygJ6WFFuLb-zTJr9iXDxpHn33b",
+        "title": "238 steps",
+        "snapshot_image": "/nudge/image/e/1417754848/EdU6mUygJ6WFFuLb-zTJr9iXDxpHn33b/L6F6Mlp2dtg.png",
+        "time_created": 1417726800,
+        "time_updated": 1418110629,
+        "details":  {
+          "active_time": 122,
+          "tzs":  [
+             [
+              1417726800,
+              "Europe/Berlin"
+            ]
+          ],
+          "bmr_day": 1798.14318411,
+          "wo_count": 0,
+          "wo_longest": 0,
+          "bmr": 1798.14318411,
+          "bg_calories": 10.4058554173,
+          "hourly_totals":  {
+            "2014120422":  {
+              "distance": 199,
+              "active_time": 122,
+              "calories": 10.4058554173,
+              "inactive_time": 0,
+              "longest_idle_time": 0,
+              "steps": 238,
+              "longest_active_time": 57
+            }
+          },
+          "wo_time": 0,
+          "wo_active_time": 0,
+          "sunrise": 1417677960,
+          "distance": 199,
+          "tz": "Europe/Berlin",
+          "longest_active": 57,
+          "longest_idle": 0,
+          "calories": 12.948490486,
+          "km": 0.199,
+          "steps": 238,
+          "wo_calories": 0,
+          "inactive_time": 0,
+          "sunset": 1417705080
+        },
+        "date": 20141204,
+        "type": "move"
+      }
+    ],
+    "size": 6
+  }
+}
