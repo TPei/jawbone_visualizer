@@ -12,7 +12,7 @@ def to_hours(seconds):
     return seconds / 60 / 60
 
 
-def plot_from_csv():
+def plot_sleep_from_csv():
     sleep_data = parse_csv()
     total_times = []
     deep_times = []
@@ -33,7 +33,7 @@ def plot_from_csv():
     plot_line_graph(total_times, total_times, deep_times, light_times, awake_times, labels)
 
 
-def plot_from_json():
+def plot_sleep():
     json_data = open('res/sleep.json')
     data = json.load(json_data)
     items = data['data']['items']
@@ -64,6 +64,18 @@ def plot_from_json():
     #plot_bar_chart(total_sleep, deep_times, light_times, awake_times, labels)
     json_data.close()
 
+
+def plot_steps():
+    json_data = open('res/moves.json')
+    data = json.load(json_data)
+    items = data['data']['items']
+    steps = []
+    for item in items:
+        steps.append(item['details']['steps'])
+
+    steps_line(steps[::1])
+
 if __name__ == '__main__':
-    #plot_from_csv()
-    plot_from_json()
+    #plot_sleep_from_csv()
+    plot_sleep()
+    plot_steps()

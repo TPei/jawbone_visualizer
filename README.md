@@ -16,3 +16,4 @@ Moves should be saved as moves.json
 
 Creates a visualisation like so:
 ![Github languages](https://github.com/TPei/jawbone_sleep_visualizer/blob/master/img/sleep_and_average.png)
+![Github languages](https://github.com/TPei/jawbone_sleep_visualizer/blob/master/img/steps.png)

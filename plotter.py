@@ -97,7 +97,7 @@ def composite_line_bar(time_in_bed, total_sleep, deep_sleep, light_sleep, no_sle
            ncol=2, mode="expand", borderaxespad=0.)
 
     plt.ylabel('Sleep Duration in Hours')
-    plt.xlabel('Nights (beginning 2014/12/04-05)')
+    plt.xlabel('Nights (starting 2014/12/04-05)')
 
     # set ylim to max total_sleep + 10%
     plt.ylim(0, max(time_in_bed) + (max(time_in_bed) / 8))
@@ -168,3 +168,27 @@ def composite_line_bar(time_in_bed, total_sleep, deep_sleep, light_sleep, no_sle
         plt.show()
     except ValueError:
         print("no data was found")
+
+
+def steps_line(values, labels=[]):
+
+    # calculate the average per entry
+    averages = []
+
+    for i in range(1, len(values)+1):
+        averages.append(sum(values[0:i]) / float(len(values[0:i])))
+
+    ax = plt.subplot(111)
+    line_total, = plt.plot(values, label='Total Steps', linewidth=4.0)
+    line_averages, = plt.plot(averages, label='Average', linewidth=2.0, linestyle='--')
+    #plt.legend(handles=[line_in_bed, line_total, line_deep, line_light, line_awake])
+    plt.legend(bbox_to_anchor=(0., 1.02, 1., .102), loc=1,
+           ncol=2, mode="expand", borderaxespad=0.)
+
+    plt.ylabel('Number of steps per day')
+    plt.xlabel('Days (starting 2014/12/04)')
+
+    # set ylim to max total_sleep + 10%
+    plt.ylim(0, max(values) + (max(values) / 8))
+    plt.xticks(np.arange(0, len(values), 1.0))
+    plt.show()
