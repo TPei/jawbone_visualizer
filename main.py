@@ -65,7 +65,72 @@ def plot_sleep():
     json_data.close()
 
 
-def plot_steps():
+def weekday_list():
+    json_data = open('res/sleep.json')
+    data = json.load(json_data)
+    items = data['data']['items']
+
+    total_sleep = []
+
+    for item in items:
+        item = item['details']
+
+        sound = to_hours(item['sound'])
+        light = to_hours(item['light'])
+        total_sleep.append([item['asleep_time'], sound + light])
+
+    added_times = [0, 0, 0, 0, 0, 0, 0]
+    average_times_counter = [0, 0, 0, 0, 0, 0, 0]
+    average_times = [0, 0, 0, 0, 0, 0, 0]
+
+    for entry in total_sleep:
+        entry[0] = get_weekday(entry[0])
+        added_times[entry[0]] += entry[1]
+        average_times_counter[entry[0]] += 1
+
+    for i in range(0, len(added_times)):
+        average_times[i] = (added_times[i] / float(average_times_counter[i]))
+
+    '''
+    print(total_sleep)
+    print(added_times)
+    print(average_times_counter)
+    print(average_times)
+    '''
+
+    return average_times
+
+
+    added_times = [0, 0, 0, 0, 0, 0, 0]
+    average_times_counter = [0, 0, 0, 0, 0, 0, 0]
+    average_times = [0, 0, 0, 0, 0, 0, 0]
+
+
+def visualize_sleep_per_weekday():
+    plot_bar_chart('Average sleep per weekday', 'Sleep in hours', ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'], weekday_list())
+
+
+def get_weekday(unixtimestamp):
+    # if bedtime is before 10 am, it's probably
+    # from the day before
+    time = to_datetime(unixtimestamp)
+    if time.hour < 10:
+        return time.weekday() - 1
+    return time.weekday()
+
+
+def to_datetime(unixtimestamp):
+    return datetime.datetime.fromtimestamp(
+        int(str(unixtimestamp))
+    )
+
+
+def plot_step_graph():
+    """
+    plots a total steps per day
+    vs average over time
+    step graph
+    """
     json_data = open('res/moves.json')
     data = json.load(json_data)
     items = data['data']['items']
@@ -73,9 +138,12 @@ def plot_steps():
     for item in items:
         steps.append(item['details']['steps'])
 
-    steps_line(steps[::1])
+    #remove first (latest) step entry (current, not yet finished day)
+    steps = steps[1:]
+    steps_line(steps[::-1])
 
 if __name__ == '__main__':
     #plot_sleep_from_csv()
+    visualize_sleep_per_weekday()
     plot_sleep()
-    plot_steps()
+    plot_step_graph()

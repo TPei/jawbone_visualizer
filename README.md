@@ -15,5 +15,6 @@ Just add sleep.json or sleep.csv to the res folder
 Moves should be saved as moves.json
 
 Creates a visualisation like so:
-![Github languages](https://github.com/TPei/jawbone_sleep_visualizer/blob/master/img/sleep_and_average.png)
+![Github languages](https://github.com/TPei/jawbone_sleep_visualizer/blob/master/img/sleep.png)
+![Github languages](https://github.com/TPei/jawbone_sleep_visualizer/blob/master/img/average_sleep_per_weekday.png)
 ![Github languages](https://github.com/TPei/jawbone_sleep_visualizer/blob/master/img/steps.png)
