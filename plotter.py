@@ -269,3 +269,228 @@ def steps_line(values, labels=[]):
     plt.ylim(0, max(values) + (max(values) / 8))
     plt.xticks(np.arange(0, len(values), 1.0))
     plt.show()
+
+
+def plot_all(data):
+    print("What do you want plotted?")
+    print("sleep, steps, coffee")
+    print("multiple selections possible (e.g. 'sleep, coffee')")
+    choice = input(">>>")
+
+    print(choice)
+
+    import collections
+
+    od = collections.OrderedDict(sorted(data.items()))
+
+    print(od)
+
+
+    labels = []
+    coffee = []
+    values = []
+    time_in_bed = []
+    total_sleep = []
+    deep_sleep = []
+    light_sleep = []
+    no_sleep = []
+
+    for day in od:
+        labels.append(od[day]['date'])
+
+        if 'coffee' in od[day]:
+            coffee.append(od[day]['coffee'])
+        else:
+            coffee.append(0)
+
+        if 'steps' in od[day]:
+            values.append(od[day]['steps'])
+        else:
+            values.append(0)
+
+        if 'bed' in od[day]:
+            time_in_bed.append(od[day]['bed'])
+        else:
+            time_in_bed.append(0)
+
+        if 'sleep' in od[day]:
+            total_sleep.append(od[day]['sleep'])
+        else:
+            total_sleep.append(0)
+
+        if 'sound' in od[day]:
+            deep_sleep.append(od[day]['sound'])
+        else:
+            deep_sleep.append(0)
+
+        if 'light' in od[day]:
+            light_sleep.append(od[day]['light'])
+        else:
+            light_sleep.append(0)
+
+        if 'awake' in od[day]:
+            no_sleep.append(od[day]['awake'])
+        else:
+            no_sleep.append(0)
+
+
+    fig, ax1 = plt.subplots()
+
+    if '3' in choice or 'coffee' in choice:
+
+        line_total, = ax1.plot(coffee, color='#ffa500', linewidth=4.0)
+        #ax1.legend(bbox_to_anchor=(0., 1.02, 1., .102), loc=1,
+        #       ncol=2, mode="expand", borderaxespad=0.)
+
+        ax1.set_ylabel('Cups of coffee per day', color='#ffa500')
+        ax1.set_xlabel('Days (starting 2014/12/04)')
+
+    # --------------------- #
+    # ------- steps ------- #
+    # --------------------- #
+    if '2' in choice or 'steps' in choice:
+
+        ax2 = ax1.twinx()
+
+        # calculate the average per entry
+        averages = []
+
+        for i in range(1, len(values)+1):
+            averages.append(sum(values[0:i]) / float(len(values[0:i])))
+
+        line_total, = ax2.plot(values, label='Total Steps', color='r', linewidth=4.0)
+        line_averages, = ax2.plot(averages, label='Average', linewidth=2.0, linestyle='--')
+        #plt.legend(handles=[line_in_bed, line_total, line_deep, line_light, line_awake])
+        #plt.legend(bbox_to_anchor=(0., 1.02, 1., .102), loc=1,
+        #       ncol=2, mode="expand", borderaxespad=0.)
+
+        ax2.set_ylabel('Number of steps per day', color='r')
+        ax2.set_xlabel('Days (starting 2014/12/04)')
+
+        # set ylim to max total_sleep + 10%
+        #plt.ylim(0, max(values) + (max(values) / 8))
+
+    # --------------------- #
+    # ------- sleep ------- #
+    # --------------------- #
+
+    if '1' in choice or 'sleep' in choice:
+        averages = []
+
+        for i in range(1, len(total_sleep)+1):
+            averages.append(sum(total_sleep[0:i]) / float(len(total_sleep[0:i])))
+
+        ax3 = ax1.twinx()
+        line_total, = ax3.plot(total_sleep, label='Total Sleep', linewidth=6.0)
+        line_in_bed, = ax3.plot(time_in_bed, label='Time in Bed')
+        line_deep, = ax3.plot(deep_sleep, label='Deep Sleep', linestyle='--', linewidth=4.0)
+        line_light, = ax3.plot(light_sleep, label='Light Sleep', linestyle='-.', linewidth=4.0)
+        line_awake, = ax3.plot(no_sleep, label='Awake')
+        line_averages, = ax3.plot(averages, label='Averages')
+        #plt.legend(handles=[line_in_bed, line_total, line_deep, line_light, line_awake])
+        ax3.set_ylabel('Sleep Duration in Hours')
+
+        leg = plt.legend(bbox_to_anchor=(0., 1.02, 1., .102), loc=1,
+               ncol=2, mode="expand", borderaxespad=0.)
+
+        lines = [line_total, line_in_bed, line_deep, line_light, line_awake, line_averages]
+
+        lined = dict()
+        for legline, origline in zip(leg.get_lines(), lines):
+            legline.set_picker(5)  # 5 pts tolerance
+            lined[legline] = origline
+
+        def onpick(event):
+            # on the pick event, find the orig line corresponding to the
+            # legend proxy line, and toggle the visibility
+            legline = event.artist
+            origline = lined[legline]
+            vis = not origline.get_visible()
+            origline.set_visible(vis)
+            # Change the alpha on the line in the legend so we can see what lines
+            # have been toggled
+            if vis:
+                legline.set_alpha(1.0)
+            else:
+                legline.set_alpha(0.2)
+            fig.canvas.draw()
+
+
+
+    fig.canvas.mpl_connect('pick_event', onpick)
+
+        # set ylim to max total_sleep + 10%
+    plt.show()
+
+
+def coffee_vs_sleep(data):
+    '''
+    plot a average sleep vs amount of coffee graph
+    :param data:
+    :return:
+    '''
+    categories = ['< 2', '2/3', '4/5', '6+']
+    count = [0, 0, 0, 0]
+    average_counter = [0, 0, 0, 0]
+    average = [0, 0, 0, 0]
+
+    import collections
+
+    od = collections.OrderedDict(sorted(data.items()))
+
+    print(od)
+
+    category = 'sleep'
+
+    for day in od:
+
+        if 'coffee' in od[day] and category in od[day]:
+            #coffee.append(od[day]['coffee'])
+            if od[day]['coffee'] < 2:
+                count[0] += od[day][category]
+                average_counter[0] += 1
+            elif od[day]['coffee'] < 4:
+                count[1] += od[day][category]
+                average_counter[1] += 1
+            elif od[day]['coffee'] < 5:
+                count[2] += od[day][category]
+                average_counter[2] += 1
+            else:
+                count[3] += od[day][category]
+                average_counter[3] += 1
+
+    #calculate average
+    for i in range(0, len(count)):
+        average[i] = (count[i] / float(average_counter[i]))
+
+    fig = plt.figure('Coffee vs Sleep')
+    ax = fig.add_subplot(111)
+
+
+    ## necessary variables
+    ind = np.arange(len(average))
+    width = 0.5
+
+    try:
+        offset = max(average) / 20
+        ## the bars
+        bars = ax.bar(ind, average, width, alpha=0.7, color='r')
+        for rect in bars:
+            height = rect.get_height()
+            ax.text(rect.get_x()+rect.get_width()/2., offset+height, '%.2f' % height,
+                    ha='center', va='bottom')
+
+        # axes and labels
+        ax.set_xlim(-width, len(ind)+width)
+        ax.set_ylim(0, max(average) + max(average) / 10)
+        ax.set_ylabel('Average Sleep Hours')
+        ax.set_xlabel('Cups of coffee')
+        ax.set_title('Coffee vs Sleep')
+        xTickMarks = categories
+        ax.set_xticks(ind+(width/2))
+        xtickNames = ax.set_xticklabels(xTickMarks)
+        plt.setp(xtickNames, rotation=-45, fontsize=10)
+        plt.show()
+    except ValueError:
+        print("no data was found")
+
