@@ -514,12 +514,16 @@ def coffee_effect_sleep(data):
         ax.set_xlim(-width, len(ind)+width)
         ax.set_ylim(0, max(average) + max(average) / 10)
         ax.set_ylabel('Average Sleep Hours')
-        ax.set_xlabel('Cups of coffee')
+        ax.set_xlabel('Cups of coffee (respectively based on x occurences)')
         ax.set_title('Effect of coffee on sleep')
+
+        for i in range(0, len(categories)):
+            categories[i] += ' (' + str(average_counter[i]) + 'x)'
+
         xTickMarks = categories
         ax.set_xticks(ind+(width/2))
         xtickNames = ax.set_xticklabels(xTickMarks)
-        plt.setp(xtickNames, rotation=-45, fontsize=10)
+        plt.setp(xtickNames, rotation=0, fontsize=10)
         #plt.legend((p1[0], p2[0], p3[0]), ('Deep Sleep', 'Light Sleep', 'Awake'))
         plt.legend((p1[0], p2[0]), ('Deep Sleep', 'Light Sleep'))
         plt.show()
