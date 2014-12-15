@@ -1,6 +1,5 @@
 __author__ = 'TPei'
-import datetime
-from date_parser import *
+from helper.date_parser import *
 
 def to_hours(seconds):
     return seconds / 60 / 60

@@ -3,10 +3,112 @@
     "user_xid": "0XKM3EPKpEIzrtFNh6_jxg",
     "message": "OK",
     "code": 200,
-    "time": 1418623387
+    "time": 1418634972
   },
   "data":  {
     "items":  [
+       {
+        "place_type": "",
+        "reaction": null,
+        "place_lon": 9.4320499,
+        "time_completed": 1418628293,
+        "xid": "M33nrWg21jtlX2cHog5fVnWRjm9ZvUM6",
+        "title": "Coffee",
+        "place_id": "",
+        "place_acc": "",
+        "note": "Coffee",
+        "time_updated": 1418628299,
+        "time_created": 1418628293,
+        "place_lat": 54.7780409,
+        "shared": true,
+        "date": 20141215,
+        "details":  {
+          "fiber": 0,
+          "polyunsaturated_fat": 0.0022592593,
+          "calories": 2.2592592,
+          "potassium": 106.18519,
+          "num_mealitems_yellow": 0,
+          "calcium": 0,
+          "only_waters": true,
+          "client_trace":  [],
+          "carbohydrate": 0.09037037,
+          "trans_fat": 0,
+          "num_mealitems_green": 0,
+          "saturated_fat": 0,
+          "protein": 0.2711111,
+          "num_foods": 0,
+          "monounsaturated_fat": 0.027111111,
+          "tz": "Europe/Berlin",
+          "sodium": 4.5185184,
+          "vitamin_c": 0,
+          "vitamin_a": 0,
+          "fat": 0.045185186,
+          "unsaturated_fat": 0.029370371,
+          "place_type": "",
+          "sugar": 0,
+          "num_drinks": 1,
+          "num_water": 0,
+          "iron": 0,
+          "num_mealitems_red": 0,
+          "food_score": null,
+          "num_mealitems_with_score": 0,
+          "cholesterol": 0,
+          "accuracy": 0
+        },
+        "sub_type": 1,
+        "place_name": ""
+      },
+       {
+        "place_type": "",
+        "reaction": null,
+        "place_lon": 9.4320728,
+        "time_completed": 1418624500,
+        "xid": "M33nrWg21js5jB6pjnVs0HTM6Dc6rCw6",
+        "title": "Coffee",
+        "place_id": "",
+        "place_acc": "",
+        "note": "Coffee",
+        "time_updated": 1418624507,
+        "time_created": 1418624500,
+        "place_lat": 54.7780609,
+        "shared": true,
+        "date": 20141215,
+        "details":  {
+          "fiber": 0,
+          "polyunsaturated_fat": 0.0022592593,
+          "calories": 2.2592592,
+          "potassium": 106.18519,
+          "num_mealitems_yellow": 0,
+          "calcium": 0,
+          "only_waters": true,
+          "client_trace":  [],
+          "carbohydrate": 0.09037037,
+          "trans_fat": 0,
+          "num_mealitems_green": 0,
+          "saturated_fat": 0,
+          "protein": 0.2711111,
+          "num_foods": 0,
+          "monounsaturated_fat": 0.027111111,
+          "tz": "Europe/Berlin",
+          "sodium": 4.5185184,
+          "vitamin_c": 0,
+          "vitamin_a": 0,
+          "fat": 0.045185186,
+          "unsaturated_fat": 0.029370371,
+          "place_type": "",
+          "sugar": 0,
+          "num_drinks": 1,
+          "num_water": 0,
+          "iron": 0,
+          "num_mealitems_red": 0,
+          "food_score": null,
+          "num_mealitems_with_score": 0,
+          "cholesterol": 0,
+          "accuracy": 0
+        },
+        "sub_type": 1,
+        "place_name": ""
+      },
        {
         "place_type": "",
         "reaction": null,
@@ -1997,14 +2099,13 @@
         "place_name": ""
       },
        {
-        "place_type": "",
         "reaction": null,
         "place_lon": 9.4517376,
         "time_completed": 1418122926,
         "xid": "M33nrWg21ju_i0C5KViizu1AVfxmUxRg",
         "title": "Bulgur and Tomato Chili Sauce and Cooked Vegetables and Caesar Salad and Caesar Salad and Sesame Oil and Olive Oil",
         "place_id": "",
-        "place_acc": "",
+        "place_type": "",
         "note": "Bulgur and Tomato Chili Sauce and Cooked Vegetables and Caesar Salad and Caesar Salad and Sesame Oil and Olive Oil",
         "time_updated": 1418123048,
         "time_created": 1418122926,
@@ -2045,6 +2146,7 @@
           "accuracy": 0
         },
         "sub_type": 2,
+        "place_acc": "",
         "place_name": ""
       },
        {
@@ -2609,14 +2711,13 @@
         "place_name": ""
       },
        {
-        "place_type": "",
         "reaction": null,
         "place_lon": 9.432017,
         "time_completed": 1417885985,
         "xid": "EdU6mUygJ6X9754QJYLcJXMS3qUvjpdY",
         "title": "Hummus",
         "place_id": "",
-        "place_acc": "",
+        "place_type": "",
         "note": "Hummus",
         "time_updated": 1417886051,
         "time_created": 1417885985,
@@ -2657,6 +2758,7 @@
           "accuracy": 0
         },
         "sub_type": 3,
+        "place_acc": "",
         "place_name": ""
       },
        {
@@ -3782,6 +3884,6 @@
         "place_name": ""
       }
     ],
-    "size": 74
+    "size": 76
   }
 }

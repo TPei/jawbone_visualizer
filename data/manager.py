@@ -1,13 +1,11 @@
 __author__ = 'TPei'
-import csv
-import datetime
-from date_parser import *
-from csv_parser import *
-from plotter import *
 import json
-from pprint import pprint
-from helper import *
-from data_handler import get_all_the_data
+
+from helper.csv_parser import *
+from plotting.plotter import *
+from data.data_handler import get_all_the_data
+from helper.helper import *
+
 
 def plot_sleep_from_csv():
     sleep_data = parse_csv()

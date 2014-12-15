@@ -1,7 +1,8 @@
 __author__ = 'TPei'
-import plotly.plotly as py
-from plotly.graph_objs import *
-from data_handler import get_all_the_data
+from plotting.plotly.graph_objs import *
+
+from data.data_handler import get_all_the_data
+
 
 """
 Working with the plotly api to create more interactive diagrams

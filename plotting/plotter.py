@@ -444,8 +444,6 @@ def coffee_effect_sleep(data):
 
     od = collections.OrderedDict(sorted(data.items()))
 
-    print(od)
-
     category = 'sleep'
 
     for day in od:
