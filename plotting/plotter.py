@@ -271,13 +271,7 @@ def steps_line(values, labels=[]):
     plt.show()
 
 
-def plot_all(data):
-    print("What do you want plotted?")
-    print("sleep, steps, coffee")
-    print("multiple selections possible (e.g. 'sleep, coffee')")
-    choice = input(">>>")
-
-    print(choice)
+def plot_all(data, choices=[1]):
 
     import collections
 
@@ -336,7 +330,7 @@ def plot_all(data):
 
     fig, ax1 = plt.subplots()
 
-    if '3' in choice or 'coffee' in choice:
+    if 3 in choices:
 
         line_total, = ax1.plot(coffee, color='#ffa500', linewidth=4.0)
         #ax1.legend(bbox_to_anchor=(0., 1.02, 1., .102), loc=1,
@@ -348,7 +342,7 @@ def plot_all(data):
     # --------------------- #
     # ------- steps ------- #
     # --------------------- #
-    if '2' in choice or 'steps' in choice:
+    if 2 in choices:
 
         ax2 = ax1.twinx()
 
@@ -374,7 +368,7 @@ def plot_all(data):
     # ------- sleep ------- #
     # --------------------- #
 
-    if '1' in choice or 'sleep' in choice:
+    if 1 in choices:
         averages = []
 
         for i in range(1, len(total_sleep)+1):
@@ -392,34 +386,33 @@ def plot_all(data):
 
         leg = plt.legend(bbox_to_anchor=(0., 1.02, 1., .102), loc=1,
                ncol=2, mode="expand", borderaxespad=0.)
+        try:
+            lines = [line_total, line_in_bed, line_deep, line_light, line_awake, line_averages]
 
-        lines = [line_total, line_in_bed, line_deep, line_light, line_awake, line_averages]
+            lined = dict()
+            for legline, origline in zip(leg.get_lines(), lines):
+                legline.set_picker(5)  # 5 pts tolerance
+                lined[legline] = origline
 
-        lined = dict()
-        for legline, origline in zip(leg.get_lines(), lines):
-            legline.set_picker(5)  # 5 pts tolerance
-            lined[legline] = origline
+            def onpick(event):
+                # on the pick event, find the orig line corresponding to the
+                # legend proxy line, and toggle the visibility
+                legline = event.artist
+                origline = lined[legline]
+                vis = not origline.get_visible()
+                origline.set_visible(vis)
+                # Change the alpha on the line in the legend so we can see what lines
+                # have been toggled
+                if vis:
+                    legline.set_alpha(1.0)
+                else:
+                    legline.set_alpha(0.2)
+                fig.canvas.draw()
 
-        def onpick(event):
-            # on the pick event, find the orig line corresponding to the
-            # legend proxy line, and toggle the visibility
-            legline = event.artist
-            origline = lined[legline]
-            vis = not origline.get_visible()
-            origline.set_visible(vis)
-            # Change the alpha on the line in the legend so we can see what lines
-            # have been toggled
-            if vis:
-                legline.set_alpha(1.0)
-            else:
-                legline.set_alpha(0.2)
-            fig.canvas.draw()
+            fig.canvas.mpl_connect('pick_event', onpick)
+        except Exception:
+            print("whoops")
 
-
-
-    fig.canvas.mpl_connect('pick_event', onpick)
-
-        # set ylim to max total_sleep + 10%
     plt.show()
 
 

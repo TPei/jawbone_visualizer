@@ -29,6 +29,18 @@ class App:
                          text="Coffee's effect on sleep",
                          command=self.coffee_vs_sleep)
         self.cvs.pack()
+        Label(master, text="OR").pack(anchor=W)
+        self.composite_sleep = IntVar()
+        self.composite_coffee = IntVar()
+        self.composite_steps = IntVar()
+        Label(master, text="Create composite a line chart").pack(anchor=W)
+        Checkbutton(master, text="Sleep", variable=self.composite_sleep).pack(anchor=W)
+        Checkbutton(master, text="Coffee", variable=self.composite_coffee).pack(anchor=W)
+        Checkbutton(master, text="Steps", variable=self.composite_steps).pack(anchor=W)
+        self.cvs = Button(master,
+                          width=self.button_width,
+                         text="Create",
+                         command=self.composite).pack()
 
     def coffee_vs_sleep(self):
         coffee_effect_sleep(get_all_the_data())
@@ -41,6 +53,19 @@ class App:
 
     def sleep_per_weekday(self):
         visualize_sleep_per_weekday()
+
+    def composite(self):
+        values = []
+        if self.composite_sleep.get() == 1:
+            values.append(1)
+
+        if self.composite_coffee.get() == 1:
+            values.append(3)
+
+        if self.composite_steps.get() == 1:
+            values.append(2)
+
+        plot_all(get_all_the_data(), values)
 
 root = Tk()
 app = App(root)
