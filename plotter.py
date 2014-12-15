@@ -423,16 +423,22 @@ def plot_all(data):
     plt.show()
 
 
-def coffee_vs_sleep(data):
+def coffee_effect_sleep(data):
     '''
     plot a average sleep vs amount of coffee graph
     :param data:
     :return:
     '''
-    categories = ['< 2', '2/3', '4/5', '6+']
+    categories = ['0', '1/2', '3/4', '5+']
     count = [0, 0, 0, 0]
+    count_sound = [0, 0, 0, 0]
+    count_light = [0, 0, 0, 0]
+    count_awake = [0, 0, 0, 0]
     average_counter = [0, 0, 0, 0]
     average = [0, 0, 0, 0]
+    average_sound = [0, 0, 0, 0]
+    average_light = [0, 0, 0, 0]
+    average_awake = [0, 0, 0, 0]
 
     import collections
 
@@ -446,24 +452,45 @@ def coffee_vs_sleep(data):
 
         if 'coffee' in od[day] and category in od[day]:
             #coffee.append(od[day]['coffee'])
-            if od[day]['coffee'] < 2:
+            if od[day]['coffee'] == 0:
                 count[0] += od[day][category]
+                count_sound[0] += od[day]['sound']
+                count_light[0] += od[day]['light']
+                count_awake[0] += od[day]['awake']
                 average_counter[0] += 1
-            elif od[day]['coffee'] < 4:
+            elif od[day]['coffee'] < 3:
                 count[1] += od[day][category]
+                count_sound[1] += od[day]['sound']
+                count_light[1] += od[day]['light']
+                count_awake[1] += od[day]['awake']
                 average_counter[1] += 1
             elif od[day]['coffee'] < 5:
                 count[2] += od[day][category]
+                count_sound[2] += od[day]['sound']
+                count_light[2] += od[day]['light']
+                count_awake[2] += od[day]['awake']
                 average_counter[2] += 1
             else:
                 count[3] += od[day][category]
+                count_sound[3] += od[day]['sound']
+                count_light[3] += od[day]['light']
+                count_awake[3] += od[day]['awake']
                 average_counter[3] += 1
+        else:
+            count[0] += od[day][category]
+            count_sound[0] += od[day]['sound']
+            count_light[0] += od[day]['light']
+            count_awake[0] += od[day]['awake']
+            average_counter[0] += 1
 
     #calculate average
     for i in range(0, len(count)):
         average[i] = (count[i] / float(average_counter[i]))
+        average_sound[i] = (count_sound[i] / float(average_counter[i]))
+        average_light[i] = (count_light[i] / float(average_counter[i]))
+        average_awake[i] = (count_awake[i] / float(average_counter[i]))
 
-    fig = plt.figure('Coffee vs Sleep')
+    fig = plt.figure('Coffee -> Sleep')
     ax = fig.add_subplot(111)
 
 
@@ -475,6 +502,9 @@ def coffee_vs_sleep(data):
         offset = max(average) / 20
         ## the bars
         bars = ax.bar(ind, average, width, alpha=0.7, color='r')
+        p1 = plt.bar(ind, average_sound,   width, color='#002EB8')
+        p2 = plt.bar(ind, average_light, width, color='#005CE6', bottom=average_sound)
+        #p3 = plt.bar(ind, average_awake, width, color='#FF4719', bottom=[average_sound[j] + average_light[j] for j in range(len(average_sound))])
         for rect in bars:
             height = rect.get_height()
             ax.text(rect.get_x()+rect.get_width()/2., offset+height, '%.2f' % height,
@@ -485,11 +515,13 @@ def coffee_vs_sleep(data):
         ax.set_ylim(0, max(average) + max(average) / 10)
         ax.set_ylabel('Average Sleep Hours')
         ax.set_xlabel('Cups of coffee')
-        ax.set_title('Coffee vs Sleep')
+        ax.set_title('Effect of coffee on sleep')
         xTickMarks = categories
         ax.set_xticks(ind+(width/2))
         xtickNames = ax.set_xticklabels(xTickMarks)
         plt.setp(xtickNames, rotation=-45, fontsize=10)
+        #plt.legend((p1[0], p2[0], p3[0]), ('Deep Sleep', 'Light Sleep', 'Awake'))
+        plt.legend((p1[0], p2[0]), ('Deep Sleep', 'Light Sleep'))
         plt.show()
     except ValueError:
         print("no data was found")
