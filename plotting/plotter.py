@@ -44,6 +44,48 @@ def plot_bar_chart(title, ylabel, keys, values):
         print("no data was found")
 
 
+def plot_sleep_per_weekday(title, ylabel, keys, values, counter, color_list):
+    """
+    creates a bar chart for the given data
+    :param title: title to display
+    :param ylabel: ylabel text
+    :param keys: names for the bars
+    :param values: values to create bars for
+    :param user: the user which we are visualizing here
+    :return:
+    """
+    fig = plt.figure(title)
+    ax = fig.add_subplot(111)
+
+
+    ## necessary variables
+    ind = np.arange(len(values))
+    width = 0.5
+
+    try:
+        offset = max(values) / 20
+        ## the bars
+        bars = ax.bar(ind, values, width, color=color_list)
+        for rect in bars:
+            height = rect.get_height()
+            ax.text(rect.get_x()+rect.get_width()/2., offset+height, '%.2f' % height,
+                    ha='center', va='bottom')
+
+        # axes and labels
+        ax.set_xlim(-width, len(ind)+width)
+        ax.set_ylim(0, max(values) + max(values) / 10)
+        ax.set_ylabel(ylabel)
+        ax.set_title(title + "\n (based on " + str(sum(counter)) + " nights of sleep data)")
+        xTickMarks = keys
+        ax.set_xticks(ind+(width/2))
+        xtickNames = ax.set_xticklabels(xTickMarks)
+        plt.setp(xtickNames, rotation=-45, fontsize=10)
+        plt.legend((bars[0], bars[-1]), ('Weeknights', 'Weeekends'), loc=4)
+        plt.show()
+    except ValueError:
+        print("no data was found")
+
+
 def plot_sleep_bars(total_sleep, deep_sleep, light_sleep, no_sleep, labels=[]):
     """
     plot a bar chart where the total sleep bar is made up out of

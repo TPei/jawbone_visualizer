@@ -102,11 +102,20 @@ def weekday_list():
     print(average_times)
     '''
 
-    return average_times
+    return average_times, average_times_counter
 
 
 def visualize_sleep_per_weekday():
-    plot_bar_chart('Average sleep per weekday', 'Sleep in hours', ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'], weekday_list())
+    sleeps, counter = weekday_list()
+    days = ['Mon -\nTue', 'Tue -\nWed', 'Wed -\nThu', 'Thu -\nFri', 'Fri -\nSat', 'Sat -\nSun', 'Sun -\n Mon']
+
+    # move night Sunday - Monday to front
+    sleeps.insert(0, sleeps.pop())
+    days.insert(0, days.pop())
+
+    # make weeknights red and weekend nights blue
+    colors = ['#FF4D4D', '#FF4D4D', '#FF4D4D', '#FF4D4D', '#FF4D4D', '#0066CC', '#0066CC']
+    plot_sleep_per_weekday('Average sleep per weeknight', 'Sleep in hours', days, sleeps, counter, colors)
 
 
 def coffee_analyzer():
@@ -149,10 +158,10 @@ def plot_step_graph():
 
 
 if __name__ == '__main__':
-    #visualize_sleep_per_weekday()
+    visualize_sleep_per_weekday()
     #plot_sleep()
     #plot_step_graph()
     #plot_all(get_all_the_data())
     #print(get_all_the_data('awake_time'))
     #compareDicts(get_all_the_data(), get_all_the_data('awake_time'))
-    coffee_effect_sleep(get_all_the_data())
+    #coffee_effect_sleep(get_all_the_data())
