@@ -6,6 +6,7 @@ from data.manager import *
 
 class App:
     def __init__(self, master):
+        master.wm_title("Jawbone Visualizer")
         self.button_width = 25
         self.description = Label(master, text="Please choose a visualization mode:")
         self.description.pack()
@@ -33,7 +34,7 @@ class App:
         self.composite_sleep = IntVar()
         self.composite_coffee = IntVar()
         self.composite_steps = IntVar()
-        Label(master, text="Create composite a line chart").pack(anchor=W)
+        Label(master, text="Create a composite line chart").pack(anchor=W)
         Checkbutton(master, text="Sleep", variable=self.composite_sleep).pack(anchor=W)
         Checkbutton(master, text="Coffee", variable=self.composite_coffee).pack(anchor=W)
         Checkbutton(master, text="Steps", variable=self.composite_steps).pack(anchor=W)

@@ -3,17 +3,112 @@
     "user_xid": "0XKM3EPKpEIzrtFNh6_jxg",
     "message": "OK",
     "code": 200,
-    "time": 1418623291
+    "time": 1418894534
   },
   "data":  {
     "items":  [
        {
         "place_lon": "",
+        "time_completed": 1418890941,
+        "xid": "M33nrWg21jtMZmqbFTN0oKmuMQxZkLu5",
+        "title": "for 7h 8m",
+        "place_acc": "",
+        "time_updated": 1418890959,
+        "time_created": 1418861766,
+        "place_lat": "",
+        "date": 20141218,
+        "shared": true,
+        "place_name": "",
+        "snapshot_image": "/nudge/image/e/1418890959/M33nrWg21jtMZmqbFTN0oKmuMQxZkLu5/L6F6Mlp2dtg.png",
+        "sub_type": 0,
+        "details":  {
+          "body": 0,
+          "sound": 10800,
+          "tz": "Europe/Berlin",
+          "awakenings": 4,
+          "light": 14919,
+          "mind": 0,
+          "asleep_time": 1418862180,
+          "awake": 3456,
+          "rem": 0,
+          "duration": 29175,
+          "smart_alarm_fire": 1418890920,
+          "quality": 69,
+          "awake_time": 1418890800,
+          "sunrise": 1418888520,
+          "sunset": 1418914560
+        }
+      },
+       {
+        "place_lon": "",
+        "time_updated": 1418793322,
+        "xid": "M33nrWg21jv7jz6_ePIsmz4amsVYJBxL",
+        "details":  {
+          "body": 0,
+          "sound": 5197,
+          "tz": "Europe/Berlin",
+          "awakenings": 6,
+          "light": 16178,
+          "mind": 0,
+          "asleep_time": 1418770140,
+          "awake": 2563,
+          "rem": 0,
+          "duration": 23938,
+          "smart_alarm_fire": 1418793120,
+          "quality": 47,
+          "awake_time": 1418793000,
+          "sunrise": 1418802060,
+          "sunset": 1418741700
+        },
+        "title": "for 5h 56m",
+        "place_acc": "",
+        "time_completed": 1418793139,
+        "time_created": 1418769201,
+        "place_lat": "",
+        "date": 20141217,
+        "shared": true,
+        "snapshot_image": "/nudge/image/e/1418793322/M33nrWg21jv7jz6_ePIsmz4amsVYJBxL/L6F6Mlp2dtg.png",
+        "sub_type": 0,
+        "place_name": ""
+      },
+       {
+        "place_lon": "",
+        "time_updated": 1418709375,
+        "xid": "M33nrWg21jtHCE303PZltN5foAqs3A1j",
+        "place_lat": "",
+        "title": "for 5h 50m",
+        "place_acc": "",
+        "time_completed": 1418709358,
+        "details":  {
+          "body": 0,
+          "sound": 9072,
+          "tz": "Europe/Berlin",
+          "awakenings": 3,
+          "light": 11956,
+          "mind": 0,
+          "asleep_time": 1418685840,
+          "awake": 3488,
+          "rem": 0,
+          "duration": 24516,
+          "smart_alarm_fire": 0,
+          "quality": 57,
+          "awake_time": 1418708700,
+          "sunrise": 1418715600,
+          "sunset": 1418741700
+        },
+        "time_created": 1418684842,
+        "date": 20141216,
+        "shared": true,
+        "snapshot_image": "/nudge/image/e/1418709375/M33nrWg21jtHCE303PZltN5foAqs3A1j/L6F6Mlp2dtg.png",
+        "sub_type": 0,
+        "place_name": ""
+      },
+       {
+        "place_lon": "",
         "time_updated": 1418622519,
         "xid": "M33nrWg21js7DdQfBazZX8G5G_-lHLDC",
-        "place_lat": "",
         "title": "for 7h 45m",
-        "place_acc": "",
+        "time_created": 1418592583,
         "time_completed": 1418622489,
         "details":  {
           "body": 0,
@@ -32,20 +127,18 @@
           "sunrise": 1418629140,
           "sunset": 1418568900
         },
-        "time_created": 1418592583,
+        "place_lat": "",
         "date": 20141215,
         "shared": true,
         "snapshot_image": "/nudge/image/e/1418622519/M33nrWg21js7DdQfBazZX8G5G_-lHLDC/L6F6Mlp2dtg.png",
         "sub_type": 0,
+        "place_acc": "",
         "place_name": ""
       },
        {
         "place_lon": "",
         "time_updated": 1418543936,
         "xid": "M33nrWg21juF4fLXP5RIL94cOAmokbB9",
-        "title": "for 7h 46m",
-        "time_created": 1418514518,
-        "time_completed": 1418543909,
         "details":  {
           "body": 0,
           "sound": 9638,
@@ -63,21 +156,24 @@
           "sunrise": 1418542680,
           "sunset": 1418568900
         },
+        "title": "for 7h 46m",
+        "place_acc": "",
+        "time_completed": 1418543909,
+        "time_created": 1418514518,
         "place_lat": "",
         "date": 20141214,
         "shared": true,
         "snapshot_image": "/nudge/image/e/1418543936/M33nrWg21juF4fLXP5RIL94cOAmokbB9/L6F6Mlp2dtg.png",
         "sub_type": 0,
-        "place_acc": "",
         "place_name": ""
       },
        {
         "place_lon": "",
         "time_updated": 1418456913,
         "xid": "M33nrWg21juS3yr7spQtWymyxrrOg1si",
-        "place_lat": "",
         "title": "for 8h 3m",
         "place_acc": "",
+        "sub_type": 0,
         "time_completed": 1418456724,
         "details":  {
           "body": 0,
@@ -96,11 +192,11 @@
           "sunrise": 1418456220,
           "sunset": 1418482500
         },
-        "time_created": 1418426444,
+        "place_lat": "",
         "date": 20141213,
         "shared": true,
         "snapshot_image": "/nudge/image/e/1418456913/M33nrWg21juS3yr7spQtWymyxrrOg1si/L6F6Mlp2dtg.png",
-        "sub_type": 0,
+        "time_created": 1418426444,
         "place_name": ""
       },
        {
@@ -137,18 +233,12 @@
       },
        {
         "place_lon": "",
-        "time_updated": 1418275317,
+        "time_completed": 1418275287,
         "xid": "M33nrWg21ju7kLcI43SETXr3HSuK4aF2",
+        "time_created": 1418246635,
         "title": "for 6h 42m",
         "place_acc": "",
-        "time_completed": 1418275287,
-        "time_created": 1418246635,
-        "place_lat": "",
-        "date": 20141211,
-        "shared": true,
-        "place_name": "",
-        "snapshot_image": "/nudge/image/e/1418275317/M33nrWg21ju7kLcI43SETXr3HSuK4aF2/L6F6Mlp2dtg.png",
-        "sub_type": 0,
+        "time_updated": 1418275317,
         "details":  {
           "body": 0,
           "sound": 11669,
@@ -165,12 +255,21 @@
           "awake_time": 1418274900,
           "sunrise": 1418283300,
           "sunset": 1418223360
-        }
+        },
+        "place_lat": "",
+        "date": 20141211,
+        "shared": true,
+        "snapshot_image": "/nudge/image/e/1418275317/M33nrWg21ju7kLcI43SETXr3HSuK4aF2/L6F6Mlp2dtg.png",
+        "sub_type": 0,
+        "place_name": ""
       },
        {
         "place_lon": "",
         "time_updated": 1418190475,
         "xid": "M33nrWg21jt5PRKzKPpLFfKw0W1dHG_a",
+        "title": "for 6h 42m",
+        "time_created": 1418161803,
+        "time_completed": 1418190465,
         "details":  {
           "body": 0,
           "sound": 12780,
@@ -188,24 +287,22 @@
           "sunrise": 1418196840,
           "sunset": 1418136960
         },
-        "title": "for 6h 42m",
-        "place_acc": "",
-        "time_completed": 1418190465,
-        "time_created": 1418161803,
         "place_lat": "",
         "date": 20141210,
         "shared": true,
         "snapshot_image": "/nudge/image/e/1418190475/M33nrWg21jt5PRKzKPpLFfKw0W1dHG_a/L6F6Mlp2dtg.png",
         "sub_type": 0,
+        "place_acc": "",
         "place_name": ""
       },
        {
         "place_lon": "",
-        "time_updated": 1418109485,
-        "xid": "M33nrWg21jtApXwC6zIa1KzfafplJUsL",
-        "title": "for 7h 37m",
-        "time_created": 1418073382,
         "time_completed": 1418109478,
+        "xid": "M33nrWg21jtApXwC6zIa1KzfafplJUsL",
+        "time_created": 1418073382,
+        "title": "for 7h 37m",
+        "place_acc": "",
+        "time_updated": 1418109485,
         "details":  {
           "body": 0,
           "sound": 13429,
@@ -228,13 +325,16 @@
         "shared": true,
         "snapshot_image": "/nudge/image/e/1418109485/M33nrWg21jtApXwC6zIa1KzfafplJUsL/L6F6Mlp2dtg.png",
         "sub_type": 0,
-        "place_acc": "",
         "place_name": ""
       },
        {
         "place_lon": "",
         "time_updated": 1418022530,
         "xid": "EdU6mUygJ6VeQfj-RuwJi9QvW7sXUfEo",
+        "place_lat": "",
+        "title": "for 8h 30m",
+        "place_acc": "",
+        "time_completed": 1418022501,
         "details":  {
           "body": 0,
           "sound": 15116,
@@ -252,11 +352,7 @@
           "sunrise": 1418023920,
           "sunset": 1417964220
         },
-        "title": "for 8h 30m",
-        "place_acc": "",
-        "time_completed": 1418022501,
         "time_created": 1417986716,
-        "place_lat": "",
         "date": 20141208,
         "shared": true,
         "snapshot_image": "/nudge/image/e/1418022530/EdU6mUygJ6VeQfj-RuwJi9QvW7sXUfEo/L6F6Mlp2dtg.png",
@@ -267,9 +363,8 @@
         "place_lon": "",
         "time_updated": 1417941009,
         "xid": "EdU6mUygJ6UKGP01ObPrTthpr51_EfN_",
-        "place_lat": "",
         "title": "for 8h 56m",
-        "place_acc": "",
+        "time_created": 1417905523,
         "time_completed": 1417941001,
         "details":  {
           "body": 0,
@@ -288,21 +383,22 @@
           "sunrise": 1417937400,
           "sunset": 1417877820
         },
-        "time_created": 1417905523,
+        "place_lat": "",
         "date": 20141207,
         "shared": true,
         "snapshot_image": "/nudge/image/e/1417941009/EdU6mUygJ6UKGP01ObPrTthpr51_EfN_/L6F6Mlp2dtg.png",
         "sub_type": 0,
+        "place_acc": "",
         "place_name": ""
       },
        {
         "place_lon": "",
-        "time_completed": 1417859518,
+        "time_updated": 1417859523,
         "xid": "EdU6mUygJ6X5TJBEiPzhRz12cFaAcpg8",
         "time_created": 1417834971,
         "title": "for 6h 22m",
         "place_acc": "",
-        "time_updated": 1417859523,
+        "time_completed": 1417859518,
         "details":  {
           "body": 0,
           "sound": 12309,
@@ -329,12 +425,11 @@
       },
        {
         "place_lon": "",
-        "time_completed": 1417756040,
-        "xid": "EdU6mUygJ6UxpnnJECiUOIRntQdmVIGN",
-        "time_created": 1417728627,
-        "title": "for 7h 3m",
-        "place_acc": "",
         "time_updated": 1417756059,
+        "xid": "EdU6mUygJ6UxpnnJECiUOIRntQdmVIGN",
+        "title": "for 7h 3m",
+        "time_created": 1417728627,
+        "time_completed": 1417756040,
         "details":  {
           "body": 0,
           "sound": 14162,
@@ -357,9 +452,10 @@
         "shared": true,
         "snapshot_image": "/nudge/image/e/1417756059/EdU6mUygJ6UxpnnJECiUOIRntQdmVIGN/L6F6Mlp2dtg.png",
         "sub_type": 0,
+        "place_acc": "",
         "place_name": ""
       }
     ],
-    "size": 11
+    "size": 14
   }
 }

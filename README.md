@@ -17,4 +17,3 @@ Creates visualisations to analyze your behavior:
 ![Github languages](https://github.com/TPei/jawbone_sleep_visualizer/blob/master/img/average_sleep_per_weekday.png)
 ![Github languages](https://github.com/TPei/jawbone_sleep_visualizer/blob/master/img/steps.png)
 ![Github languages](https://github.com/TPei/jawbone_sleep_visualizer/blob/master/img/coffee_vs_sleep.png)
-![Github languages](https://github.com/TPei/jawbone_sleep_visualizer/blob/master/img/coffee_vs_sleep2.png)
