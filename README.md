@@ -14,6 +14,6 @@ and save them as sleep.json, moves.json and meals.json into the res folder.
 
 Creates visualisations to analyze your behavior:
 ![Github languages](https://github.com/TPei/jawbone_sleep_visualizer/blob/master/img/sleep.png)
-![Github languages](https://github.com/TPei/jawbone_sleep_visualizer/blob/master/img/average_sleep_per_weekday.png)
+![Github languages](https://github.com/TPei/jawbone_sleep_visualizer/blob/master/img/average_sleep_per_weeknight.png)
 ![Github languages](https://github.com/TPei/jawbone_sleep_visualizer/blob/master/img/steps.png)
 ![Github languages](https://github.com/TPei/jawbone_sleep_visualizer/blob/master/img/coffee_vs_sleep.png)
