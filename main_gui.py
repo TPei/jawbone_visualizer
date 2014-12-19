@@ -20,6 +20,11 @@ class App:
                          text="Average Sleep per Weekday",
                          command=self.sleep_per_weekday)
         self.spw.pack()
+        self.cpw = Button(master,
+                          width=self.button_width,
+                         text="Average Coffee per Weekday",
+                         command=self.coffee_per_weekday)
+        self.cpw.pack()
         self.steps = Button(master,
                             width=self.button_width,
                          text="Daily Steps over time",
@@ -62,6 +67,9 @@ class App:
 
     def sleep_per_weekday(self):
         visualize_sleep_per_weekday()
+
+    def coffee_per_weekday(self):
+        visualize_coffee_per_weekday()
 
     def composite(self):
         values = []

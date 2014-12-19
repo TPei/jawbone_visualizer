@@ -69,25 +69,56 @@ def plot_sleep():
     json_data.close()
 
 
+def coffee_per_weekday(data):
+    added_times = [0, 0, 0, 0, 0, 0, 0]
+    average_times_counter = [0, 0, 0, 0, 0, 0, 0]
+    average_times = [0, 0, 0, 0, 0, 0, 0]
+
+    for date in data:
+        print(data[date])
+
+        d = str(data[date]['date'])
+        day = datetime.datetime(int(d[0:4]), int(d[4:6]), int(d[6:8]))
+        weekday = day.weekday()
+        print(data[date]['date'])
+        print(weekday)
+
+        if 'coffee' in data[date]:
+            coffee = data[date]['coffee']
+        else:
+            coffee = 0
+
+        added_times[weekday] += coffee
+        average_times_counter[weekday] += 1
+
+    for i in range(0, len(added_times)):
+        if average_times_counter[i] == 0:
+            average_times[i] = 0
+        else:
+            average_times[i] = (added_times[i] / float(average_times_counter[i]))
+
+    return average_times, average_times_counter
+
 def weekday_list():
     json_data = open('res/sleep.json')
     data = json.load(json_data)
     items = data['data']['items']
 
-    total_sleep = []
+    total_amount = []
 
     for item in items:
         item = item['details']
 
         sound = to_hours(item['sound'])
         light = to_hours(item['light'])
-        total_sleep.append([item['asleep_time'], sound + light])
+        total_amount.append([item['asleep_time'], sound + light])
+
 
     added_times = [0, 0, 0, 0, 0, 0, 0]
     average_times_counter = [0, 0, 0, 0, 0, 0, 0]
     average_times = [0, 0, 0, 0, 0, 0, 0]
 
-    for entry in total_sleep:
+    for entry in total_amount:
         entry[0] = get_weekday(entry[0])
         added_times[entry[0]] += entry[1]
         average_times_counter[entry[0]] += 1
@@ -116,6 +147,15 @@ def visualize_sleep_per_weekday():
     # make weeknights red and weekend nights blue
     colors = ['#FF4D4D', '#FF4D4D', '#FF4D4D', '#FF4D4D', '#FF4D4D', '#0066CC', '#0066CC']
     plot_sleep_per_weekday('Average sleep per weeknight', 'Sleep in hours', days, sleeps, counter, colors)
+
+
+def visualize_coffee_per_weekday():
+    coffees, counter = coffee_per_weekday(get_all_the_data())
+    days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+
+    # make weeknights red and weekend nights blue
+    colors = ['#FF4D4D', '#FF4D4D', '#FF4D4D', '#FF4D4D', '#FF4D4D', '#0066CC', '#0066CC']
+    plot_coffee_per_weekday('Average Coffee per weekday', 'Cups of coffee', days, coffees, counter, colors)
 
 
 def coffee_analyzer():
