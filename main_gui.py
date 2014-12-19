@@ -30,6 +30,11 @@ class App:
                          text="Coffee's effect on sleep",
                          command=self.coffee_vs_sleep)
         self.cvs.pack()
+        self.svc = Button(master,
+                          width=self.button_width,
+                         text="Sleep's effect on coffee",
+                         command=self.sleep_vs_coffee)
+        self.svc.pack()
         Label(master, text="OR").pack(anchor=W)
         self.composite_sleep = IntVar()
         self.composite_coffee = IntVar()
@@ -45,6 +50,9 @@ class App:
 
     def coffee_vs_sleep(self):
         coffee_effect_sleep(get_all_the_data())
+
+    def sleep_vs_coffee(self):
+        sleep_effect_on_coffee(get_all_the_data())
 
     def sleep(self):
         plot_sleep()

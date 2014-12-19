@@ -9,6 +9,38 @@
     "items":  [
        {
         "place_lon": "",
+        "time_updated": 1418969329,
+        "xid": "M33nrWg21js2G8SUOEleE5_oIODp0s21",
+        "title": "for 6h 20m",
+        "time_created": 1418942121,
+        "time_completed": 1418969289,
+        "details":  {
+          "body": 0,
+          "sound": 8189,
+          "tz": "Europe/Berlin",
+          "awakenings": 4,
+          "light": 14645,
+          "mind": 0,
+          "asleep_time": 1418944259,
+          "awake": 4334,
+          "rem": 0,
+          "duration": 27168,
+          "smart_alarm_fire": 0,
+          "quality": 59,
+          "awake_time": 1418969100,
+          "sunrise": 1418974980,
+          "sunset": 1418914560
+        },
+        "place_lat": "",
+        "date": 20141219,
+        "shared": true,
+        "snapshot_image": "/nudge/image/e/1418969329/M33nrWg21js2G8SUOEleE5_oIODp0s21/L6F6Mlp2dtg.png",
+        "sub_type": 0,
+        "place_acc": "",
+        "place_name": ""
+      },
+       {
+        "place_lon": "",
         "time_completed": 1418890941,
         "xid": "M33nrWg21jtMZmqbFTN0oKmuMQxZkLu5",
         "title": "for 7h 8m",

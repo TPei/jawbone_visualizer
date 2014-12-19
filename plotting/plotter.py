@@ -563,3 +563,89 @@ def coffee_effect_sleep(data):
     except ValueError:
         print("no data was found")
 
+
+def sleep_effect_on_coffee(data):
+    '''
+    plot a average sleep vs amount of coffee graph
+    :param data:
+    :return:
+    '''
+    categories = ['<5', '5-6', '6-7', '7-8', '8+']
+    count = [0, 0, 0, 0, 0]
+    average_counter = [0, 0, 0, 0, 0]
+    average = [0, 0, 0, 0, 0]
+
+    import collections
+
+    od = collections.OrderedDict(sorted(data.items()))
+
+    category = 'sleep'
+
+    for day in od:
+
+        if 'coffee' in od[day] and category in od[day]:
+            #coffee.append(od[day]['coffee'])
+            sleep_duration = od[day]['sound'] + od[day]['light']
+            # od[day]['coffee']
+            '''if od[day]['coffee'] == 0:
+                count[0] += od[day][category]
+                average_counter[0] += 1'''
+
+            if sleep_duration < 5:
+                count[0] += od[day]['coffee']
+                average_counter[0] += 1
+            elif sleep_duration < 6:
+                count[1] += od[day]['coffee']
+                average_counter[1] += 1
+            elif sleep_duration < 7:
+                count[2] += od[day]['coffee']
+                average_counter[2] += 1
+            elif sleep_duration < 8:
+                count[3] += od[day]['coffee']
+                average_counter[3] += 1
+            elif sleep_duration > 8:
+                count[4] += od[day]['coffee']
+                average_counter[4] += 1
+
+    #calculate average
+    for i in range(0, len(count)):
+        if average_counter[i] == 0:
+            average[i] = 0
+        else:
+            average[i] = (count[i] / float(average_counter[i]))
+
+    fig = plt.figure('Sleep -> Coffee')
+    ax = fig.add_subplot(111)
+
+
+    ## necessary variables
+    ind = np.arange(len(average))
+    width = 0.5
+
+    try:
+        offset = max(average) / 20
+        ## the bars
+        bars = ax.bar(ind, average, width, alpha=0.7, color='r')
+        #p3 = plt.bar(ind, average_awake, width, color='#FF4719', bottom=[average_sound[j] + average_light[j] for j in range(len(average_sound))])
+        for rect in bars:
+            height = rect.get_height()
+            ax.text(rect.get_x()+rect.get_width()/2., offset+height, '%.2f' % height,
+                    ha='center', va='bottom')
+
+        # axes and labels
+        ax.set_xlim(-width, len(ind)+width)
+        ax.set_ylim(0, max(average) + max(average) / 10)
+        ax.set_ylabel('Average Cups of Coffee')
+        ax.set_xlabel('Hours of Sleep (respectively based on x occurences)')
+        ax.set_title('Average amount of coffee drunk in relation to amount sleept the prior night')
+
+        for i in range(0, len(categories)):
+            categories[i] += ' (' + str(average_counter[i]) + 'x)'
+
+        xTickMarks = categories
+        ax.set_xticks(ind+(width/2))
+        xtickNames = ax.set_xticklabels(xTickMarks)
+        plt.setp(xtickNames, rotation=0, fontsize=10)
+        plt.show()
+    except ValueError:
+        print("no data was found")
