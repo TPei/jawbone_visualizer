@@ -60,8 +60,6 @@ def plot_sleep():
 
         timestamps.append(int(str(date.year) + str(date.month) + str(day)))
 
-    print(timestamps)
-
     # json data is from now -> past, dirty array reverse here
     #plot_line_graph(time_in_bed[::-1], total_sleep[::-1], deep_times[::-1], light_times[::-1], awake_times[::-1])
     composite_line_bar(time_in_bed[::-1], total_sleep[::-1], deep_times[::-1], light_times[::-1], awake_times[::-1])

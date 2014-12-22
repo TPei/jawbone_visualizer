@@ -218,14 +218,16 @@ def composite_line_bar(time_in_bed, total_sleep, deep_sleep, light_sleep, no_sle
     for i in range(1, len(total_sleep)+1):
         averages.append(sum(total_sleep[0:i]) / float(len(total_sleep[0:i])))
 
+    #           bed         asleep      deep    light       awake       average
+    colors = ['#00CC66', '#0000FF', '#E60000', '#CCCCFF', '#66FFFF', '#CC9900']
     fig, ax = plt.subplots()
     ax = plt.subplot2grid((3,3), (0,0), colspan=2, rowspan=3)
-    line_total, = plt.plot(total_sleep, label='Total Sleep', linewidth=6.0)
-    line_in_bed, = plt.plot(time_in_bed, label='Time in Bed')
-    line_deep, = plt.plot(deep_sleep, label='Deep Sleep', linestyle='--', linewidth=4.0)
-    line_light, = plt.plot(light_sleep, label='Light Sleep', linestyle='-.', linewidth=4.0)
-    line_awake, = plt.plot(no_sleep, label='Awake')
-    line_averages, = plt.plot(averages, label='Average')
+    line_in_bed, = plt.plot(time_in_bed, color=colors[0], label='Time in Bed')
+    line_total, = plt.plot(total_sleep, color=colors[1], label='Total Sleep', linewidth=6.0)
+    line_deep, = plt.plot(deep_sleep, color=colors[2], label='Deep Sleep', linestyle='--', linewidth=4.0)
+    line_light, = plt.plot(light_sleep, color=colors[3], label='Light Sleep', linestyle='-.', linewidth=4.0)
+    line_awake, = plt.plot(no_sleep, color=colors[4], label='Awake')
+    line_averages, = plt.plot(averages, color=colors[5], label='Average')
     #plt.legend(handles=[line_in_bed, line_total, line_deep, line_light, line_awake])
     leg = plt.legend(bbox_to_anchor=(0., 1.02, 1., .102), loc=1,
            ncol=2, mode="expand", borderaxespad=0.)
@@ -257,9 +259,13 @@ def composite_line_bar(time_in_bed, total_sleep, deep_sleep, light_sleep, no_sle
     fig.canvas.mpl_connect('pick_event', onpick)
     plt.ylabel('Sleep Duration in Hours')
     plt.xlabel('Nights (starting 2014/12/04-05)')
+    ax.grid(axis="y")
 
     # set ylim to max total_sleep + 10%
-    plt.ylim(0, max(time_in_bed) + (max(time_in_bed) / 8))
+
+    x_scale_top = max(time_in_bed) + (max(time_in_bed) / 8)
+
+    plt.ylim(0, x_scale_top)
     plt.xticks(np.arange(0, len(time_in_bed), 1.0))
     #plt.show()
 
@@ -270,6 +276,7 @@ def composite_line_bar(time_in_bed, total_sleep, deep_sleep, light_sleep, no_sle
     ## bar chart ##
     ################
     ax = plt.subplot2grid((3,3), (0, 2), rowspan=3)
+    ax.grid(axis="y")
 
     ## necessary variables
     ind = np.arange(5)
@@ -300,7 +307,7 @@ def composite_line_bar(time_in_bed, total_sleep, deep_sleep, light_sleep, no_sle
 
 
         # three subbars stacked to meat the total_time
-        p0 = plt.bar(ind, bars2, width)
+        p0 = plt.bar(ind, bars2, width, color=colors)
         #p00 = plt.bar(ind, total_sleep, width)
         #p1 = plt.bar(ind, deep_sleep, width)
         #p2 = plt.bar(ind, light_sleep, width)
@@ -314,7 +321,8 @@ def composite_line_bar(time_in_bed, total_sleep, deep_sleep, light_sleep, no_sle
 
         # axes and labels
         ax.set_xlim(-width, len(ind)+width)
-        ax.set_ylim(0, max(total_sleep) + max(total_sleep) / 10)
+        #ax.set_ylim(0, max(total_sleep) + max(total_sleep) / 10)
+        ax.set_ylim(0, x_scale_top)
         ax.set_ylabel('total sleep in hours per night')
         ax.set_title('Average times for sleep cycles')
         xTickMarks = ['in bed', 'asleep', 'deep', 'light', 'awake']
