@@ -679,7 +679,7 @@ def sleep_effect_on_coffee(data):
         ax.set_ylim(0, max(average) + max(average) / 10)
         ax.set_ylabel('Average Cups of Coffee')
         ax.set_xlabel('Hours of Sleep (respectively based on x occurences)')
-        ax.set_title('Average amount of coffee drunk in relation to amount sleept the prior night')
+        ax.set_title('Average amount of coffee drunk in relation to amount slept the prior night')
 
         for i in range(0, len(categories)):
             categories[i] += ' (' + str(average_counter[i]) + 'x)'

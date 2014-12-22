@@ -12,33 +12,33 @@ class App:
         self.description.pack()
         self.sleep = Button(master,
                             width=self.button_width,
-                         text="Nightly Sleep over time",
-                         command=self.sleep)
+                            text="Nightly Sleep over time",
+                            command=self.sleep)
         self.sleep.pack()
         self.spw = Button(master,
                           width=self.button_width,
-                         text="Average Sleep per Weekday",
-                         command=self.sleep_per_weekday)
+                          text="Average Sleep per Weekday",
+                          command=self.sleep_per_weekday)
         self.spw.pack()
         self.cpw = Button(master,
                           width=self.button_width,
-                         text="Average Coffee per Weekday",
-                         command=self.coffee_per_weekday)
+                          text="Average Coffee per Weekday",
+                          command=self.coffee_per_weekday)
         self.cpw.pack()
         self.steps = Button(master,
                             width=self.button_width,
-                         text="Daily Steps over time",
-                         command=self.steps)
+                            text="Daily Steps over time",
+                            command=self.steps)
         self.steps.pack()
         self.cvs = Button(master,
                           width=self.button_width,
-                         text="Coffee's effect on sleep",
-                         command=self.coffee_vs_sleep)
+                          text="Coffee's effect on sleep",
+                          command=self.coffee_vs_sleep)
         self.cvs.pack()
         self.svc = Button(master,
                           width=self.button_width,
-                         text="Sleep's effect on coffee",
-                         command=self.sleep_vs_coffee)
+                          text="Sleep's effect on coffee",
+                          command=self.sleep_vs_coffee)
         self.svc.pack()
         Label(master, text="OR").pack(anchor=W)
         self.composite_sleep = IntVar()
@@ -50,27 +50,34 @@ class App:
         Checkbutton(master, text="Steps", variable=self.composite_steps).pack(anchor=W)
         self.cvs = Button(master,
                           width=self.button_width,
-                         text="Create",
-                         command=self.composite).pack()
+                          text="Create",
+                          command=self.composite).pack()
 
-    def coffee_vs_sleep(self):
+    @staticmethod
+    def coffee_vs_sleep():
         coffee_effect_sleep(get_all_the_data())
 
-    def sleep_vs_coffee(self):
+    @staticmethod
+    def sleep_vs_coffee():
         sleep_effect_on_coffee(get_all_the_data())
 
-    def sleep(self):
+    @staticmethod
+    def sleep():
         plot_sleep()
 
-    def steps(self):
+    @staticmethod
+    def steps():
         plot_step_graph()
 
-    def sleep_per_weekday(self):
+    @staticmethod
+    def sleep_per_weekday():
         visualize_sleep_per_weekday()
 
-    def coffee_per_weekday(self):
+    @staticmethod
+    def coffee_per_weekday():
         visualize_coffee_per_weekday()
 
+    @staticmethod
     def composite(self):
         values = []
         if self.composite_sleep.get() == 1:
