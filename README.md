@@ -11,6 +11,7 @@ Please provide your data through .json files which can be obtained using the jaw
 - "https://jawbone.com/nudge/api/v.1.1/users/@me/meals"
 
 and save them as sleep.json, moves.json and meals.json into the res folder.
+The repo comes with a couple days of demo data from my jawbone.
 
 Creates visualisations to analyze your behavior:
 ![Github languages](https://github.com/TPei/jawbone_sleep_visualizer/blob/master/img/sleep.png)
