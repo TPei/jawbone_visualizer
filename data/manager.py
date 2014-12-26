@@ -70,16 +70,12 @@ def plot_sleep():
 def coffee_per_weekday(data):
     added_times = [0, 0, 0, 0, 0, 0, 0]
     average_times_counter = [0, 0, 0, 0, 0, 0, 0]
-    average_times = [0, 0, 0, 0, 0, 0, 0]
 
     for date in data:
-        print(data[date])
 
         d = str(data[date]['date'])
         day = datetime.datetime(int(d[0:4]), int(d[4:6]), int(d[6:8]))
         weekday = day.weekday()
-        print(data[date]['date'])
-        print(weekday)
 
         if 'coffee' in data[date]:
             coffee = data[date]['coffee']
@@ -89,13 +85,10 @@ def coffee_per_weekday(data):
         added_times[weekday] += coffee
         average_times_counter[weekday] += 1
 
-    for i in range(0, len(added_times)):
-        if average_times_counter[i] == 0:
-            average_times[i] = 0
-        else:
-            average_times[i] = (added_times[i] / float(average_times_counter[i]))
+    average_times = averages(added_times, average_times_counter)
 
     return average_times, average_times_counter
+
 
 def weekday_list():
     json_data = open('res/sleep.json')
@@ -114,15 +107,13 @@ def weekday_list():
 
     added_times = [0, 0, 0, 0, 0, 0, 0]
     average_times_counter = [0, 0, 0, 0, 0, 0, 0]
-    average_times = [0, 0, 0, 0, 0, 0, 0]
 
     for entry in total_amount:
         entry[0] = get_weekday(entry[0])
         added_times[entry[0]] += entry[1]
         average_times_counter[entry[0]] += 1
 
-    for i in range(0, len(added_times)):
-        average_times[i] = (added_times[i] / float(average_times_counter[i]))
+    average_times = averages(added_times, average_times_counter)
 
     '''
     print(total_sleep)

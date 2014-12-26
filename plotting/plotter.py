@@ -99,7 +99,6 @@ def plot_coffee_per_weekday(title, ylabel, keys, values, counter, color_list):
     fig = plt.figure(title)
     ax = fig.add_subplot(111)
 
-
     ## necessary variables
     ind = np.arange(len(values))
     width = 0.5
