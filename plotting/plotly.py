@@ -1,7 +1,7 @@
 __author__ = 'TPei'
 from plotting.plotly.graph_objs import *
 
-from data.data_handler import get_all_the_data
+from data.DataHandler import get_all_the_data
 
 
 """

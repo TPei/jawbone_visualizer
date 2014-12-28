@@ -265,6 +265,7 @@ def composite_line_bar(time_in_bed, total_sleep, deep_sleep, light_sleep, no_sle
     x_scale_top = max(time_in_bed) + (max(time_in_bed) / 8)
 
     plt.ylim(0, x_scale_top)
+    plt.xlim(0, len(time_in_bed)-1)
     plt.xticks(np.arange(0, len(time_in_bed), 1.0))
     #plt.show()
 
