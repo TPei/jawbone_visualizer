@@ -184,6 +184,30 @@ def plot_step_graph():
     steps_line(steps[::-1])
 
 
+def step_sleep_total():
+    json_data = open('res/moves.json')
+    data = json.load(json_data)
+    items = data['data']['items']
+    steps = []
+    for item in items:
+        steps.append(item['details']['steps'])
+
+    json_data.close()
+    json_data = open('res/sleep.json')
+    data = json.load(json_data)
+    items = data['data']['items']
+
+    total_sleep = []
+
+    for item in items:
+        item = item['details']
+
+        sound = to_hours(item['sound'])
+        light = to_hours(item['light'])
+        total_sleep.append(sound + light)
+
+    # reverse
+    total_steps_sleep_line(steps[::-1], total_sleep[::-1])
 
 
 if __name__ == '__main__':

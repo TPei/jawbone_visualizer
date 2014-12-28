@@ -339,16 +339,22 @@ def composite_line_bar(time_in_bed, total_sleep, deep_sleep, light_sleep, no_sle
 
 
 def steps_line(values, labels=[]):
+    values = values[1:]
+
+    target_daily_steps = 10000
 
     # calculate the average per entry
     averages = []
+    target = []
 
     for i in range(1, len(values)+1):
         averages.append(sum(values[0:i]) / float(len(values[0:i])))
+        target.append(target_daily_steps)
 
     ax = plt.subplot(111)
     line_total, = plt.plot(values, label='Total Steps', linewidth=4.0)
     line_averages, = plt.plot(averages, label='Average', linewidth=2.0, linestyle='--')
+    line_target, = plt.plot(target, label='Target', linewidth=2.0, linestyle='-.')
     #plt.legend(handles=[line_in_bed, line_total, line_deep, line_light, line_awake])
     plt.legend(bbox_to_anchor=(0., 1.02, 1., .102), loc=1,
            ncol=2, mode="expand", borderaxespad=0.)
@@ -358,7 +364,55 @@ def steps_line(values, labels=[]):
 
     # set ylim to max total_sleep + 10%
     plt.ylim(0, max(values) + (max(values) / 8))
-    plt.xticks(np.arange(0, len(values), 1.0))
+    plt.xlim(0, len(values)-1)
+    plt.xticks(np.arange(0, len(values)-1, 1.0))
+    plt.show()
+
+
+def total_steps_sleep_line(steps, sleep, labels=[]):
+    steps = steps[1:]
+
+
+    # calculate the average per entry
+    total = []
+    total_sleep = []
+
+    for i in range(0, len(steps)-1):
+        total.append(sum(steps[0:i]))
+
+    for i in range(0, len(sleep)-1):
+        total_sleep.append(sum(sleep[0:i]))
+
+    fig, ax = plt.subplots()
+
+    line_total, = ax.plot(total, label='Total Steps', linewidth=4.0, color='r')
+    #plt.legend(handles=[line_in_bed, line_total, line_deep, line_light, line_awake])
+
+
+    ax.set_ylabel('total number of steps', color='r')
+    ax.set_xlabel('Days (starting 2014/12/04)')
+
+    # set ylim to max total_sleep + 10%
+    ax.set_ylim(0, max(total) + (max(total) / 8))
+    ax.set_xlim(0, len(total)-1)
+    ax.set_xticks(np.arange(0, len(total)-1, 1.0))
+
+
+    ax2 = ax.twinx()
+    sleep_total, = ax2.plot(total_sleep, label='Total Sleep', linewidth=4.0, color='b')
+    #plt.legend(handles=[line_in_bed, line_total, line_deep, line_light, line_awake])
+
+    ax2.set_ylabel('total hours of sleep', color='b')
+    #ax2.xlabel('Days (starting 2014/12/04)')
+
+    # set ylim to max total_sleep + 10%
+    ax2.set_ylim(0, max(total_sleep) + (max(total_sleep) /10))
+    ax2.set_xlim(0, len(total_sleep)-1)
+    ax2.set_xticks(np.arange(0, len(total_sleep)-1, 1.0))
+
+    '''plt.legend(bbox_to_anchor=(0., 1.02, 1., .102), loc=1,
+           ncol=2, mode="expand", borderaxespad=0.)'''
+
     plt.show()
 
 

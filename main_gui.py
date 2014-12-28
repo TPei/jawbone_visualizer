@@ -25,11 +25,18 @@ class App:
                           text="Average Coffee per Weekday",
                           command=self.coffee_per_weekday)
         self.cpw.pack()
-        self.steps = Button(master,
+        self.step = Button(master,
                             width=self.button_width,
                             text="Daily Steps over time",
                             command=self.steps)
-        self.steps.pack()
+        self.step.pack()
+
+        self.sum = Button(master,
+                            width=self.button_width,
+                            text="Total Steps / Sleep over time",
+                            command=self.sums)
+        self.sum.pack()
+
         self.cvs = Button(master,
                           width=self.button_width,
                           text="Coffee's effect on sleep",
@@ -68,6 +75,10 @@ class App:
     @staticmethod
     def steps():
         plot_step_graph()
+
+    @staticmethod
+    def sums():
+        step_sleep_total()
 
     @staticmethod
     def sleep_per_weekday():
