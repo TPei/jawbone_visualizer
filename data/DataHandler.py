@@ -98,8 +98,6 @@ class DataHandler:
         return category
 
 
-
-
 def get_all_the_data(time_type="asleep_time"):
     """
     parse json files (meals, sleep, moves) and put
@@ -127,10 +125,14 @@ def get_all_the_data(time_type="asleep_time"):
 
             day = date.day
             if date.hour < 10:
-                day -= 1
+                year, month, day = decrease_day(date.year, date.month, day)
+            else:
+                year = date.year
+                month = date.month
             day = "{0:0=2d}".format(day)
+            month = "{0:0=2d}".format(int(month))
 
-            date = int(str(date.year) + str(date.month) + str(day))
+            date = int(str(year) + str(month) + str(day))
 
         d[date] = {'date': date}
 
@@ -171,8 +173,21 @@ def get_all_the_data(time_type="asleep_time"):
                 d[key]['steps'] += item['details']['steps']
             else:
                 d[key]['steps'] = item['details']['steps']
-
+    for i in d:
+        print(d[i])
     return d
+
+
+def decrease_day(year, month, day):
+    if day > 1:
+        return year, month, day - 1
+    from calendar import monthrange
+    month = month - 1
+    if month == 0:
+        year -= 1
+        month = 12
+    return year, month, monthrange(year, month)[1]
+
 
 if __name__ == '__main__':
     handler = DataHandler()

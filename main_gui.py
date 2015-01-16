@@ -2,6 +2,7 @@ __author__ = 'TPei'
 from tkinter import *
 
 from data.manager import *
+from data.DataHandler import DataHandler
 
 
 class App:
