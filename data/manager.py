@@ -70,7 +70,6 @@ def plot_sleep():
 def coffee_per_weekday(data):
     added_times = [0, 0, 0, 0, 0, 0, 0]
     average_times_counter = [0, 0, 0, 0, 0, 0, 0]
-
     for date in data:
 
         d = str(data[date]['date'])
@@ -214,7 +213,7 @@ if __name__ == '__main__':
     visualize_sleep_per_weekday()
     #plot_sleep()
     #plot_step_graph()
-    #plot_all(get_all_the_data())
+    plot_all(get_all_the_data())
     #print(get_all_the_data('awake_time'))
     #compareDicts(get_all_the_data(), get_all_the_data('awake_time'))
     #coffee_effect_sleep(get_all_the_data())

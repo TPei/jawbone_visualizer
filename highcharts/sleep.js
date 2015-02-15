@@ -54,7 +54,9 @@ $(function () {
         return mov_avg;
 
     };
-
+    /**
+     * parse json
+     */
     $.getJSON('../res/sleep.json', function(json) {
         var items = json.data.items;
         var bed = [];
@@ -75,12 +77,14 @@ $(function () {
             awake.push(to_hours(val.details.awake));
         });
 
+        // reverse because json is ordered latest -> oldest
         bed.reverse();
         total.reverse();
         sound.reverse();
         light.reverse();
         awake.reverse();
 
+        // get the seven day sleep average (moving average)
         seven_day_sleep_average = moving_average(total, 7);
 
         $('#container').highcharts({
