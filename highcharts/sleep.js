@@ -54,6 +54,24 @@ $(function () {
         return mov_avg;
 
     };
+
+    function timeConverter(UNIX_timestamp){
+      var a = getDate(UNIX_timestamp);
+      var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+      var year = a.getFullYear();
+      var month = months[a.getMonth()];
+      var date = a.getDate();
+      var hour = a.getHours();
+      var min = a.getMinutes();
+      var sec = a.getSeconds();
+      var time = date + '. ' + month + ' ' + year + ' ' + hour + ':' + min + ':' + sec ;
+      return time;
+    }
+
+    function getDate(UNIX_timestamp) {
+        return new Date(UNIX_timestamp*1000);
+    }
+
     /**
      * parse json
      */
@@ -64,17 +82,21 @@ $(function () {
         var sound = [];
         var light = [];
         var awake = [];
-
+        var date = [];
         /*
         had a night where I deactivated sleep in between,
         this would count as two nights here
          */
         jQuery.each(items, function(i, val) {
-            bed.push(to_hours(val.details.duration));
-            total.push(to_hours(val.details.light + val.details.sound));
-            sound.push(to_hours(val.details.sound));
-            light.push(to_hours(val.details.light));
-            awake.push(to_hours(val.details.awake));
+            bed.push(val.details.duration);
+            total.push(val.details.light + val.details.sound);
+            sound.push(val.details.sound);
+            light.push(val.details.light);
+            awake.push(val.details.awake);
+
+            awake_timestamp = val.details.awake_time;
+            date.push(awake_timestamp);
+
         });
 
         // reverse because json is ordered latest -> oldest
@@ -83,6 +105,50 @@ $(function () {
         sound.reverse();
         light.reverse();
         awake.reverse();
+        date.reverse();
+
+        var goOn = true;
+
+        while(goOn) {
+            var duplicate = -999;
+            for(var i = 1; i < bed.length; i++){
+                var day = getDate(date[i]).getDate();
+                if(day == getDate(date[i-1]).getDate()) {
+                    duplicate = i;
+                    break;
+                }
+            }
+            if(duplicate != -999) {
+                var i = duplicate;
+                bed[i-1] += bed[i];
+                bed.splice(i, 1);
+                total[i-1] += total[i];
+                total.splice(i, 1);
+                sound[i-1] += sound[i];
+                sound.splice(i, 1);
+                light[i-1] += light[i];
+                light.splice(i, 1);
+                awake[i-1] += awake[i];
+                awake.splice(i, 1);
+                date[i-1] = date[i];
+                date.splice(i, 1);
+
+                duplicate = -999;
+            }
+            else {
+                goOn = false;
+            }
+        }
+
+        for(var i = 0; i < bed.length; i++){
+            bed[i] = to_hours(bed[i]);
+            total[i] = to_hours(total[i]);
+            sound[i] = to_hours(sound[i]);
+            light[i] = to_hours(light[i]);
+            awake[i] = to_hours(awake[i]);
+            date[i] = timeConverter(date[i]);
+        }
+
 
         // get the seven day sleep average (moving average)
         seven_day_sleep_average = moving_average(total, 7);
@@ -99,9 +165,10 @@ $(function () {
             xAxis: {
                 title: {
                     text: 'Number of Nights'
-                }
+                },
                 /*categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
                  'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']*/
+                categories: date
             },
             yAxis: {
                 title: {

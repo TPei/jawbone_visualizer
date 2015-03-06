@@ -71,7 +71,7 @@ class App:
 
     @staticmethod
     def sleep():
-        plot_sleep()
+        plot_sleep(get_all_the_data())
 
     @staticmethod
     def steps():
